@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.0.5 · 2026-09-15
+
+Sửa theo review bảo mật/nội dung công khai (Grok, 15/09):
+
+- `HUONG-DAN-HOC-VIEN.md`: bỏ tên cá nhân; thêm cảnh báo `bto-optimize-mac` (cache `rm -rf`, không file cá nhân, không `sudo`).
+- Gỡ `CLAUDE.md` — ghi chú nội bộ, không ship cho học viên.
+
 ## 0.0.4 · 2026-09-15
 
 Năm skill wave 2 cho học viên Build to Own (Buổi 4–8):

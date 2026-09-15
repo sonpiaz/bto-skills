@@ -9,7 +9,7 @@ Học từ đối thủ bằng cách phân rã, không phải bằng cách chép
 tường: đội A đọc sản phẩm gốc và viết đặc tả, đội B chỉ đọc đặc tả và build.
 Đội B chưa từng thấy bản gốc, nên thứ build ra là của bạn.
 
-Phương pháp này có án lệ thật, kể ở Buổi 3: một công ty nhỏ phân rã máy tính
+Cách làm này có án lệ thật, kể ở Buổi 3: một công ty nhỏ phân rã máy tính
 IBM bằng đúng mô hình hai đội này, bị IBM kiện, và thắng kiện, vì đội build
 chưa từng nhìn thấy sản phẩm gốc. Từ vụ đó ngành công nghệ có từ khoá
 teardown và reverse engineer, làm đúng luật.

@@ -26,6 +26,8 @@ Tên skill luôn **tiếng Anh**, có tiền tố `bto-`. Nội dung hướng d�
 
 **Lưu ý:** `bto-whats-next` chỉ **đề xuất**, không tự làm. `bto-agent-team` yêu cầu bạn duyệt brief trước khi chạy wave.
 
+**`/bto-optimize-mac`:** skill này có thể **xoá cache tạo lại được** (ví dụ `rm -rf` thư mục npm/bun/Xcode DerivedData trong skill) — **không bao giờ** xoá file cá nhân (ảnh, transcript, dữ liệu dự án), và **không dùng `sudo`**.
+
 ---
 
 ## Cách cài — Claude Code (khuyến nghị)
@@ -143,7 +145,7 @@ Mở phiên agent **mới** sau khi pull.
 ## Cần trợ giúp
 
 - Discord Build to Own (kênh cohort)
-- Email / nền tảng học: Phương (điều phối viên) sẽ gửi link repo + file này
+- Email / nền tảng học: điều phối viên chương trình sẽ gửi link repo + file này
 - Góp ý skill: [CONTRIBUTING.md](CONTRIBUTING.md) — fork, sửa, mở PR
 
 ---
