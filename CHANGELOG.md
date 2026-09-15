@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.0.4 · 2026-09-15
+
+Năm skill wave 2 cho học viên Build to Own (Buổi 4–8):
+
+- `bto-sdlc` — chuỗi artifact intent → plan → build → verify → ship
+- `bto-agent-team` — duyệt một lần, nhiều role agent, chạy tới xong
+- `bto-whats-next` — triage session, đề xuất việc kế (read-only)
+- `bto-page-quality` — đo chất lượng trang, Core Web Vitals, sau launch
+- `bto-optimize-mac` — dọn RAM/ổ đĩa macOS an toàn (body tiếng Anh)
+
+Thêm `HUONG-DAN-HOC-VIEN.md`: cài Claude Code + Cursor, kiểm skill, lỗi hay gặp.
+README cập nhật bảng 8 skill.
+
 ## 0.0.1 · 2026-08-30
 
 Ba skill đầu tiên, phát cho Build to Own cohort 01 sau Buổi 3:

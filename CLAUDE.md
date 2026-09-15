@@ -1,6 +1,6 @@
 # bto-skills — ghi chú cho agent
 
-Repo này là kênh phát công khai của ba skill dạy trong Build to Own cohort 01.
+Repo này là kênh phát công khai skill dạy trong Build to Own (8 skill tính tới 0.0.4).
 
 - Nguồn sự thật của nội dung SKILL.md nằm trong repo private `build-to-own`
   tại `01-participants/skill-*/SKILL.md`. Sửa ở đó trước, rồi đồng bộ sang đây.

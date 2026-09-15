@@ -1,25 +1,33 @@
 # bto-skills
 
-**Ba skill rút từ [Build to Own](https://build2own.dev) cohort 01, cài vào agent của bạn trong một phút.**
+**Tám skill rút từ [Build to Own](https://build2own.dev), cài vào agent của bạn trong một phút.**
 
 Một skill là một tệp hướng dẫn agent tự đọc khi gặp đúng loại việc. Bạn không
 phải nhớ quy trình, không phải dán lại prompt mỗi lần. Agent thấy bạn chạm tới
 đúng loại việc là nó tự mở hướng dẫn ra và làm theo.
 
-Mọi luật trong ba skill này rút từ việc thật trong chương trình Build to Own:
-bốn tuần, một sản phẩm có người trả tiền. Không có luật nào lấy từ sách.
+Mọi luật rút từ việc thật trong chương trình Build to Own. Không có luật nào lấy
+từ sách. **Tên skill luôn tiếng Anh** (tiền tố `bto-`).
 
-| Skill | Dùng khi | Nó ép agent làm gì |
+| Skill | Dùng khi | Buổi |
 |---|---|---|
-| `/bto-secrets` | Chạm tới API key, `.env`, trước khi commit hoặc push | Đưa tên biến thay vì giá trị, quét secret trước khi push, lộ key thì xoay chứ không xoá commit |
-| `/bto-researchmarket` | Cần biết một thị trường có những ai, giá bao nhiêu, còn khoảng trống nào | Nhiều agent quét song song, mọi con số gắn nhãn nguồn, bắt buộc TAM SAM SOM, số không truy được nguồn thì từ chối in |
-| `/bto-teardown` | Muốn build một sản phẩm tương tự thứ đã có trên thị trường | Phân rã ra spec sạch, build ở phiên riêng chỉ đọc spec, cấm chép code, cấm tên kiểu X-clone |
+| `/bto-secrets` | API key, `.env`, trước commit/push | 2 |
+| `/bto-researchmarket` | Research thị trường, TAM/SAM/SOM | 3 |
+| `/bto-teardown` | Phân rã sản phẩm, build clean-room | 3 |
+| `/bto-sdlc` | Feature/refactor lớn — spec trước, code sau | 2, 4 |
+| `/bto-agent-team` | Nhiều role agent, duyệt một lần chạy tới xong | 7 |
+| `/bto-whats-next` | Cuối session — việc dở, đề xuất bước kế | 7 |
+| `/bto-page-quality` | Tốc độ trang, Core Web Vitals, sau launch | 5, 8 |
+| `/bto-optimize-mac` | Mac đầy disk/RAM, dọn an toàn | tiện ích |
+
+**Hướng dẫn chi tiết cho học viên (cài từng bước, Claude Code + Cursor, lỗi hay gặp):**
+[HUONG-DAN-HOC-VIEN.md](HUONG-DAN-HOC-VIEN.md)
 
 ## Cài
 
 Mở Claude Code và dán câu này, agent tự làm phần còn lại:
 
-> Cài bto-skills: chạy `git clone https://github.com/sonpiaz/bto-skills.git ~/.claude/skills/bto-skills && ~/.claude/skills/bto-skills/setup` rồi xác nhận ba skill bto-secrets, bto-researchmarket, bto-teardown đã nhận.
+> Cài bto-skills: chạy `git clone https://github.com/sonpiaz/bto-skills.git ~/.claude/skills/bto-skills && ~/.claude/skills/bto-skills/setup` rồi xác nhận tám skill `bto-*` đã nhận.
 
 Hoặc tự chạy hai lệnh:
 
@@ -28,55 +36,42 @@ git clone https://github.com/sonpiaz/bto-skills.git ~/.claude/skills/bto-skills
 ~/.claude/skills/bto-skills/setup
 ```
 
-Chỉ cần một skill thì tải đúng một tệp, ví dụ bto-teardown:
+Chỉ cần một skill thì tải đúng một tệp, ví dụ `bto-sdlc`:
 
 ```bash
-mkdir -p ~/.claude/skills/bto-teardown
-curl -o ~/.claude/skills/bto-teardown/SKILL.md \
-  https://raw.githubusercontent.com/sonpiaz/bto-skills/main/bto-teardown/SKILL.md
+mkdir -p ~/.claude/skills/bto-sdlc
+curl -o ~/.claude/skills/bto-sdlc/SKILL.md \
+  https://raw.githubusercontent.com/sonpiaz/bto-skills/main/bto-sdlc/SKILL.md
 ```
 
-Dùng Codex hay agent khác thì vẫn dùng được, chỉ khác chỗ đặt tệp. Hỏi agent
-của bạn "skill hoặc hướng dẫn của tôi đặt ở đâu" là nó chỉ cho.
+Dùng **Cursor** hay agent khác: xem [HUONG-DAN-HOC-VIEN.md](HUONG-DAN-HOC-VIEN.md).
 
 ## Kiểm đã ăn chưa
 
-Mở một phiên agent mới và thử từng câu:
+Mở một phiên agent mới và thử:
 
 ```
-Tôi sắp nối một API mới vào dự án. Có luật nào tôi phải theo không?
-Research thị trường công cụ đặt lịch cho tiệm làm đẹp giúp tôi.
-Tôi muốn build một sản phẩm tương tự Calendly.
+Tôi sắp build feature mới — có quy trình spec trước code không?
+Giờ làm gì tiếp theo trong session này?
+Ổ đĩa Mac tôi còn bao nhiêu GB?
 ```
 
-Câu một nó nhắc tên biến thay vì giá trị. Câu hai nó hỏi ngược mục tiêu một
-câu. Câu ba nó nhắc phân rã trước khi build. Đủ ba là xong.
+Agent nhắc intent/plan, rà việc dở (không tự chạy), hoặc đo disk an toàn → skill đã ăn.
 
 ## Skill tự tốt lên, và bạn góp tay được
 
-Mỗi skill có sẵn phần cuối dạy agent ba việc: **eval** sau mỗi lần chạy xem
-thiếu gì, **thi thoảng lookup** kiểm lại giá và công cụ đã cũ, và **không
-biết thì hỏi người**: Discord của Build to Own hoặc Sơn Piaz. Bạn vấp chỗ
-nào mà skill chưa che thì sửa và gửi pull request, xem
-[CONTRIBUTING.md](CONTRIBUTING.md), có hướng dẫn fork, clone, mở PR từng
-bước, chưa quen git thì mở issue kể chuyện cũng được.
+Mỗi skill dạy agent eval sau mỗi lần chạy, lookup khi số liệu cũ, và hỏi
+cộng đồng Build to Own khi không chắc. Góp ý: [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Skill không thay bạn chịu trách nhiệm
 
-Skill làm agent nhớ luật và đi đúng quy trình. Nó không làm con số thành
-đúng, không làm key hết lộ, không làm sản phẩm của bạn hết giống bản gốc.
-Ba việc vẫn là của bạn: đặt mục tiêu trước khi giao, đọc kết quả rồi sửa chỗ
-sai trước khi tin, và duyệt trước khi thứ gì đó rời khỏi máy.
+Skill giúp agent nhớ luật. Bạn vẫn duyệt trước khi thứ gì rời khỏi máy.
 
-## Ba skill này chỉ là một góc của chương trình
+## Chương trình đầy đủ
 
-Chúng được dạy ở Buổi 2 và Buổi 3 của **Build to Own**: chương trình bốn
-tuần đưa người đã biết build đi từ một vấn đề thật tới một sản phẩm chạy
-được, có trang thanh toán quốc tế, có affiliate, có team agent tự vận hành.
-Toàn bộ bài học, bài tập và nền tảng học nằm ở
-**[build2own.dev](https://build2own.dev)**.
+Tám skill này là một phần **Build to Own** — bốn tuần từ vấn đề thật tới sản phẩm
+có thanh toán quốc tế và team agent. **[build2own.dev](https://build2own.dev)**
 
 ---
 
-Viết bởi [Son Piaz](https://github.com/sonpiaz), tháng 8/2026. Ai không trong
-chương trình dùng cũng được, đó là lý do repo này public.
+Viết bởi [Son Piaz](https://github.com/sonpiaz). Repo public — ai cũng dùng được.
