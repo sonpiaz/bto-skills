@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.6 · 2026-09-27
+
+- `bto-event-review`: từ ghi âm hoặc video của một buổi talk cùng ảnh slide, viết lại trọn từng talk (không tóm tắt), có agent duyệt độc lập và script đo độ đầy đủ. Ví dụ đầu ra: https://homus.dev. Bản gốc: https://github.com/sonpiaz/event-review
+
 ## 0.0.5 · 2026-09-15
 
 Sửa theo review bảo mật/nội dung công khai (Grok, 15/09):
