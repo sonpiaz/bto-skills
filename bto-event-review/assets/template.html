@@ -1,0 +1,70 @@
+<meta charset="utf-8">
+<html lang="{{LANG, e.g. en}}">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{OFFICIAL TALK TITLE}}</title>
+<style>
+:root{--bg:#fbfaf7;--fg:#1d1d1f;--muted:#5f6368;--line:#e3e0d8;--accent:#1f4e8c;--soft:#eef3fa;--warn:#fff6e0;--code:#f3f1ec}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--fg:#e8e6e1;--muted:#a3a19b;--line:#2d2f33;--accent:#8fb5ea;--soft:#1b2433;--warn:#2e2918;--code:#202226}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+main{max-width:780px;margin:0 auto;padding:32px 16px 80px}
+a{color:var(--accent)}
+h1{font-size:30px;line-height:1.25;margin:8px 0}
+h2{font-size:22px;margin:48px 0 8px;padding-top:16px;border-top:1px solid var(--line)}
+h3{font-size:18px;margin:24px 0 6px}
+.meta,figcaption,.src{color:var(--muted);font-size:14px}
+.meta{margin:2px 0}
+figure{margin:18px 0}
+figure img{width:100%;height:auto;border-radius:8px;border:1px solid var(--line)}
+.diagram{background:var(--soft);border-radius:10px;padding:14px}
+.diagram svg{width:100%;height:auto;display:block;color:var(--fg)}
+.note{background:var(--warn);border-radius:8px;padding:10px 14px;margin:14px 0;font-size:15px}
+.prompt{position:relative;margin:16px 0;background:var(--code);border:1px solid var(--line);border-radius:10px}
+.prompt pre{margin:0;padding:16px 18px;white-space:pre-wrap;word-break:break-word;font:14px/1.6 ui-monospace,Menlo,monospace}
+.prompt .copy{position:absolute;top:8px;right:8px;background:var(--bg);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-size:12px;padding:3px 10px;cursor:pointer}
+code{background:var(--code);padding:1px 5px;border-radius:4px;font-size:.92em}
+nav.toc ol{padding-left:20px;font-size:15px}
+footer{margin-top:56px;border-top:1px solid var(--line);padding-top:12px}
+.back{font-size:14px}
+</style>
+</head>
+<body>
+<main>
+<p class="back"><a href="index.html">Back to the event</a></p>
+<h1>{{OFFICIAL TALK TITLE}}</h1>
+<!-- Header: one item per line. Speaker, title and company come from the OFFICIAL agenda/session
+     page, never guessed from the recording. If it truly cannot be verified, write "unverified"
+     once here and nowhere else. No source/recording metadata, no photo counts, no "how to read" block. -->
+<p class="meta">{{Speaker name}}, {{job title}} at {{company}}</p>
+<p class="meta">{{Event name}}, {{day}}{{, stage}}</p>
+<p class="meta">{{Date}}, {{start time}} {{time zone}}</p>
+<p class="meta"><a href="{{official session URL}}">Official session page</a></p>
+<nav class="toc"><ol>{{<li><a href="#s1">Section title</a></li> ...}}</ol></nav>
+
+<section class="seg" id="s1" data-src="T01">
+<h2>1. {{Section title}}</h2>
+<p>{{Full rewrite of what the speaker said in chunk T01, in order, keeping every idea, example, number and joke.}}</p>
+<figure><img src="photos/{{photo}}.jpg" alt="{{short description}}" loading="lazy"><figcaption>{{What the slide or photo shows, explained. No file names, no capture times.}}</figcaption></figure>
+<!-- A prompt or code shown on a slide that readers may reuse (escape < > &): -->
+<div class="prompt"><pre>{{exact text from the slide}}</pre></div>
+<!-- An important idea with no photo: inline SVG using currentColor only, so it reads in light and dark mode. -->
+<figure class="diagram"><svg viewBox="0 0 600 120" role="img" aria-label="{{what the diagram shows}}">
+<rect x="10" y="30" width="160" height="60" rx="8" fill="none" stroke="currentColor"/>
+<text x="90" y="65" text-anchor="middle" fill="currentColor" font-size="16">{{box}}</text>
+</svg><figcaption>{{Diagram caption}}</figcaption></figure>
+<!-- Optional personal notes (off by default): only in the PERSONAL copy, never in the published file.
+<p class="note"><b>My note during the session:</b> "{{note}}" {{how the speaker's point relates}}</p> -->
+</section>
+
+<h2>Sources and links</h2>
+<ul class="src"><li>{{official docs, repos, product pages mentioned in the talk}}</li></ul>
+<footer><!--EVAL--><!--/EVAL--></footer>
+</main>
+<script>
+// Copy button on prompt blocks.
+[].forEach.call(document.querySelectorAll('.prompt'),function(p){var b=document.createElement('button');b.className='copy';b.textContent='Copy';p.appendChild(b);
+  b.onclick=function(){var t=p.querySelector('pre').innerText;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Copied'},function(){var r=document.createRange();r.selectNodeContents(p.querySelector('pre'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'});setTimeout(function(){b.textContent='Copy'},1500)}});
+</script>
+</body>
+</html>

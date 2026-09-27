@@ -1,0 +1,15 @@
+{
+  "agent": ["tác tử", "tác nhân"],
+  "repo": ["kho mã", "kho lưu trữ"],
+  "worktree": ["cây làm việc", "cây công việc"],
+  "sandbox": ["hộp cát"],
+  "prompt": ["lời nhắc"],
+  "hook": ["cái móc"],
+  "pipeline": ["đường ống"],
+  "workflow": ["luồng công việc"],
+  "deploy": ["triển khai lên"],
+  "container": ["thùng chứa"],
+  "sub-agent": ["tác tử con"],
+  "LLM": ["mô hình ngôn ngữ lớn"],
+  "token": ["mã thông báo"]
+}
