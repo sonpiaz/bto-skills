@@ -11,7 +11,7 @@ Nghe talk chuyên sâu xong chưa hiểu hết? Đưa agent ảnh slide và tran
 
 A reader who missed nothing should be able to read the page instead of re-watching the talk. The output is a **full rewrite**, in the talk's order, keeping every idea, example, number, story and joke. It is never a summary.
 
-Paths to `scripts/`, `assets/` and `references/` below are relative to this skill's folder (for example `~/.claude/skills/event-review/`).
+Paths to `scripts/`, `assets/` and `references/` below are relative to this skill's folder (for example `~/.claude/skills/bto-event-review/`).
 
 ## Inputs
 - One transcript per talk (from your recording/transcription tool), exported as Markdown into `<event_dir>/raw/<slug>.md`:
