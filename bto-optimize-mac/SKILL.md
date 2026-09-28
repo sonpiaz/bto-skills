@@ -1,6 +1,6 @@
 ---
 name: bto-optimize-mac
-description: Measure then safely reclaim RAM and disk on macOS. Measure first; auto-clean regenerable caches; list personal data for human approval; never kill processes blindly. Use when disk is full, memory pressure is high, or before starting heavy builds.
+description: Đo trước rồi mới dọn RAM và ổ đĩa trên macOS một cách an toàn. Cache sinh lại được thì tự dọn; dữ liệu cá nhân thì liệt kê ra để bạn duyệt; không bao giờ kill process bừa. Dùng khi ổ đĩa đầy, RAM cao (memory pressure), máy chậm, hoặc trước khi chạy build nặng. Gọi bằng "dọn máy", "ổ đĩa đầy", "tối ưu RAM", "optimize mac".
 ---
 
 # /bto-optimize-mac
