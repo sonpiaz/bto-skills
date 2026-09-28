@@ -30,7 +30,7 @@ Hỏi trước khi viết một dòng. Chọn một trong bốn:
 | Lỗi mà máy tự chặn được (lộ key, commit thẳng `main`) | **Làm hook, script hoặc check**, không làm skill. Skill có thể gọi script đó |
 | Việc nhiều bước, đã lặp **từ 2 lần**, vẫn cần agent phán đoán | **Làm skill** |
 
-- Đã có skill làm được quá nửa việc này (`ls ~/.claude/skills`)? Sửa skill đó, đừng đẻ skill thứ hai.
+- Đã có skill làm được quá nửa việc này? Xem cả bốn chỗ skill có thể nằm: `~/.claude/skills`, `.claude/skills` của repo, `~/.cursor/skills`, `.cursor/skills`. Có thì sửa skill đó, đừng đẻ skill thứ hai.
 - Không kể được 2 lần thật (ngày, đầu vào, sai ở đâu)? Ghi lại, đợi lần thứ hai.
 
 ## Bước 1. Hỏi năm câu
@@ -47,7 +47,7 @@ trước (lệnh đã chạy, thứ tự bước, chỗ bạn phải sửa), r�
 5. **Xong là thế nào?** Một thứ nhìn thấy hoặc đo được: file nào có, lệnh nào xanh,
    con số nào đạt.
 
-Chưa rõ câu nào thì hỏi tiếp câu đó, đừng đoán rồi viết.
+Chưa rõ câu nào thì hỏi tiếp câu đó, đừng đoán rồi viết. Không hỏi lại được (chạy một lượt, không có người trả lời) thì ghi rõ từng chỗ là **giả định**, và chưa cài skill cho tới khi bạn xác nhận các giả định đó.
 
 ## Bước 2. Viết SKILL.md từ template
 
@@ -57,19 +57,21 @@ Copy [TEMPLATE.md](TEMPLATE.md), điền theo năm câu trả lời. Luật vi�
 - **`description`**: làm gì (một câu) · dùng khi nào (các cụm từ bạn hay nói) ·
   không dùng khi nào. Nói **khi nào dùng**, đừng tóm tắt hết các bước: agent đọc
   mô tả rồi làm theo mô tả mà bỏ qua thân file. Agent thường gọi skill **ít hơn**
-  mức cần, nên liệt kê từ khoá rộng tay. Giới hạn: Claude Code cắt ở 1.536 ký tự.
+  mức cần, nên liệt kê từ khoá rộng tay. Giới hạn: Claude Code cắt ở 1.536 ký tự, lệnh kiểm ở ngay dưới in cả độ dài.
 - **YAML phải đọc được.** Trong `description` không để dấu hai chấm theo sau là
   dấu cách (`: `). Bản 0.0.7 của repo này từng hỏng đúng lỗi đó: một skill có
   mô tả chứa `: ` nên YAML không đọc được. Kiểm bằng:
   ```bash
-  python3 -c "import yaml,sys; t=open(sys.argv[1]).read().split('---')[1]; print(yaml.safe_load(t)['name'])" SKILL.md
+  python3 -c "import yaml,sys; d=yaml.safe_load(open(sys.argv[1]).read().split('---')[1]); print(d['name'], len(d['description']))" SKILL.md
   ```
 - **Gọn.** Thân file dưới 150 dòng. Chi tiết dài (bảng giá, API reference, ví dụ)
   tách sang file cạnh bên, ví dụ `reference.md`, và ghi rõ khi nào mở nó.
 - **Độ chặt theo rủi ro.** Đụng tiền, secret, production, gửi ra ngoài: ghi lệnh
   cụ thể và điểm dừng hỏi bạn. Việc cần phán đoán: ghi mục tiêu và ràng buộc.
 - **Không đặt secret, token, đường dẫn máy cá nhân** vào skill. Skill hay được
-  chia sẻ lại, và key trong file chia sẻ là key đã lộ (xem `/bto-secrets`).
+  chia sẻ lại, và key trong file chia sẻ là key đã lộ (xem skill `bto-secrets`
+  trong cùng bộ). Việc cần "repo nào, thư mục nào" thì viết "repo đang mở" hoặc
+  đường dẫn tương đối, không viết `/Users/…`.
 
 ## Bước 3. Chạy thử trên một ca thật
 
@@ -80,8 +82,9 @@ Lấy một lần bạn đã làm việc này bằng tay, đã biết kết qu�
 2. So kết quả với lần bạn làm tay: thiếu bước nào, sai ở đâu, chỗ nào agent phải hỏi lại.
 3. Sửa `SKILL.md`, chạy lại tới khi ca đó qua.
 
-Người viết luôn thấy skill rõ, vì ngữ cảnh nằm trong đầu họ. Skill tạo skill Sơn
-viết cho chính mình (18/09/2026): lần chạy thử bằng agent mới tìm ra 4 chỗ mơ hồ.
+Người viết luôn thấy skill rõ, vì ngữ cảnh nằm trong đầu họ. Chính skill này, lần
+chạy thử đầu tiên bằng một agent mới (28/09/2026), lộ ra 5 chỗ thiếu: kiểm trùng
+chỉ ở một thư mục, không có cách đo độ dài mô tả, và ba chỗ nữa. Cả 5 đã sửa.
 
 ## Bước 4. Eval đếm được và sổ feedback
 

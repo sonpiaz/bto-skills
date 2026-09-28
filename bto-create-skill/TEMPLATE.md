@@ -28,8 +28,9 @@ description nói KHI NÀO dùng, không tóm tắt các bước. Liệt kê rộ
 
 ## Đọc trước
 
-<!-- File agent phải mở trước khi làm, theo thứ tự: README, spec, file cấu hình.
-     Chỉ trỏ tới file, không chép nội dung vào đây. Không có thì xoá mục này. -->
+<!-- Thứ agent phải đọc trước khi làm, theo thứ tự: README, spec, file cấu hình.
+     Là file thì chỉ trỏ tới file, không chép nội dung vào đây. Không phải file
+     (vài bài viết cũ, một đoạn mẫu) thì ghi "hỏi bạn dán vào chat". Không có thì xoá mục này. -->
 1. 
 
 ## Các bước
