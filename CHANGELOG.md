@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.0.10 · 2026-09-28
+## 0.0.9 · 2026-09-28
 
 - Thêm `bto-posthog`: kiểm PostHog của sản phẩm bạn theo một chuẩn đầy đủ (cài đặt project, SDK theo loại site, identify/reset, event quan trọng, reverse proxy), dựng dashboard tổng quan đặt làm trang Home, rồi đo lại để chắc số về đúng project. Kèm ví dụ bố cục dashboard và checklist một trang. Đã cài bằng `setup` thì chạy `git pull` rồi `setup` để nhận skill mới.
 
