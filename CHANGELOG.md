@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.7 · 2026-09-28
+
+- Mô tả (`description`) của `bto-event-review` và `bto-optimize-mac` chuyển sang tiếng Việt, cho khớp bảy skill còn lại. Tên skill giữ tiếng Anh, mô tả tiếng Việt để bạn đọc là biết khi nào gọi. Sửa luôn lỗi frontmatter của `bto-event-review` (mô tả cũ có dấu hai chấm làm YAML không đọc được). Tên và cách gọi không đổi, không cần cài lại.
+
 ## 0.0.6 · 2026-09-27
 
 - `bto-event-review`: từ ghi âm hoặc video của một buổi talk cùng ảnh slide, viết lại trọn từng talk (không tóm tắt), có agent duyệt độc lập và script đo độ đầy đủ. Ví dụ đầu ra: https://homus.dev. Bản gốc: https://github.com/sonpiaz/event-review

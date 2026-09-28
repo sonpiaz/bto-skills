@@ -1,6 +1,6 @@
 ---
 name: bto-event-review
-description: Turn a talk recording or transcript plus slide photos or the slide deck into a full-length, faithful rewrite of each talk (not a summary), one HTML page per talk plus an index. Use when someone wants to fully understand talks from a conference, meetup or event they attended, says "event review", "write up these talks", "turn this recording into docs", or hands over transcripts and a folder of slide photos. Optional target language: prose in that language, technical terms kept in English. Not for short summaries, one-off video notes, or social posts about an event.
+description: Từ ghi âm hoặc transcript của một buổi talk, cùng ảnh chụp slide hoặc file slide, viết lại trọn vẹn và trung thực từng talk (không phải tóm tắt), mỗi talk một trang HTML kèm một trang mục lục. Dùng khi bạn muốn hiểu hết các talk ở một hội nghị, meetup hay sự kiện đã tham dự, khi nói "event review", "viết lại các talk này", "biến ghi âm thành tài liệu", "write up these talks", hoặc đưa transcript kèm một thư mục ảnh slide. Có thể chọn ngôn ngữ đầu ra, khi đó văn viết bằng ngôn ngữ đó còn technical term giữ tiếng Anh. Không dùng cho tóm tắt ngắn, ghi chú một video lẻ, hay bài đăng mạng xã hội về sự kiện.
 ---
 
 # /bto-event-review
