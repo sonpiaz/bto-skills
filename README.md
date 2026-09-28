@@ -1,6 +1,6 @@
 # bto-skills
 
-**Mười skill rút từ [Build to Own](https://build2own.dev), cài vào agent của bạn trong một phút.**
+**Mười một skill rút từ [Build to Own](https://build2own.dev), cài vào agent của bạn trong một phút.**
 
 Một skill là một tệp hướng dẫn agent tự đọc khi gặp đúng loại việc. Bạn không
 phải nhớ quy trình, không phải dán lại prompt mỗi lần. Agent thấy bạn chạm tới
@@ -21,6 +21,7 @@ từ sách. **Tên skill luôn tiếng Anh** (tiền tố `bto-`).
 | `/bto-optimize-mac` | Mac đầy disk/RAM, dọn an toàn | tiện ích |
 | `/bto-event-review` | Đi hội nghị về, viết lại trọn từng talk từ slide + transcript ([ví dụ](https://homus.dev)) | tiện ích |
 | `/bto-posthog` | Gắn và kiểm PostHog đủ chuẩn, dashboard Home mở ra là thấy số | tiện ích |
+| `/bto-create-skill` | Biến việc bạn hay lặp lại thành skill của riêng bạn, có [template một trang](bto-create-skill/TEMPLATE.md) | tiện ích |
 
 **Hướng dẫn chi tiết cho học viên (cài từng bước, Claude Code + Cursor, lỗi hay gặp):**
 [HUONG-DAN-HOC-VIEN.md](HUONG-DAN-HOC-VIEN.md)
@@ -29,7 +30,7 @@ từ sách. **Tên skill luôn tiếng Anh** (tiền tố `bto-`).
 
 Mở Claude Code và dán câu này, agent tự làm phần còn lại:
 
-> Cài bto-skills: chạy `git clone https://github.com/sonpiaz/bto-skills.git ~/.claude/skills/bto-skills && ~/.claude/skills/bto-skills/setup` rồi xác nhận chín skill `bto-*` đã nhận.
+> Cài bto-skills: chạy `git clone https://github.com/sonpiaz/bto-skills.git ~/.claude/skills/bto-skills && ~/.claude/skills/bto-skills/setup` rồi xác nhận mười một skill `bto-*` đã nhận.
 
 Hoặc tự chạy hai lệnh:
 
@@ -71,7 +72,7 @@ Skill giúp agent nhớ luật. Bạn vẫn duyệt trước khi thứ gì rời
 
 ## Chương trình đầy đủ
 
-Chín skill này là một phần **Build to Own** — bốn tuần từ vấn đề thật tới sản phẩm
+Mười một skill này là một phần **Build to Own** — bốn tuần từ vấn đề thật tới sản phẩm
 có thanh toán quốc tế và team agent. **[build2own.dev](https://build2own.dev)**
 
 ---

@@ -1,0 +1,5 @@
+
+# Review notes stay local, never in this public repo
+.git-review-verdict.md
+self-review-*
+self-check-*
