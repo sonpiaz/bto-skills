@@ -1,6 +1,6 @@
 # Hướng dẫn cài skill Build to Own (wave 2)
 
-Tài liệu này dành cho học viên **chưa từng cài skill**. Sáu skill mới bổ sung cho ba skill Buổi 2–3 (`bto-secrets`, `bto-researchmarket`, `bto-teardown`), cộng `bto-create-skill` để bạn tự tạo skill của riêng mình.
+Tài liệu này dành cho học viên **chưa từng cài skill**. Bảy skill mới bổ sung cho ba skill Buổi 2–3 (`bto-secrets`, `bto-researchmarket`, `bto-teardown`), cộng `bto-create-skill` để bạn tự tạo skill của riêng mình.
 
 Repo: [github.com/sonpiaz/bto-skills](https://github.com/sonpiaz/bto-skills)
 
@@ -14,7 +14,7 @@ Tên skill luôn **tiếng Anh**, có tiền tố `bto-`. Nội dung hướng d�
 
 ---
 
-## Sáu skill mới, dùng khi nào
+## Bảy skill mới, dùng khi nào
 
 | Skill | Buổi học | Dùng khi | Không dùng khi | Ví dụ câu gọi |
 |---|---|---|---|---|
@@ -24,6 +24,7 @@ Tên skill luôn **tiếng Anh**, có tiền tố `bto-`. Nội dung hướng d�
 | **bto-page-quality** | 5, 8 | Trang chậm, Core Web Vitals, đo trước/sau deploy, analytics sau launch | Backend thuần, chưa có site live | *"Trang landing LCP bao nhiêu?"* · *"Đo chất lượng trang trước khi launch"* |
 | **bto-optimize-mac** | — (tiện ích) | Mac đầy disk, RAM cao, nhiều agent/build cùng lúc | Máy Windows/Linux (skill này cho macOS) | *"Ổ đĩa còn mấy GB, dọn an toàn giúp tôi"* · *"Máy chậm, đo RAM rồi đề xuất dọn"* |
 | **bto-event-review** | — (tiện ích) | Đi hội nghị, meetup về, có ghi âm hoặc transcript và ảnh slide, muốn đọc lại trọn từng talk | Chỉ cần tóm tắt ngắn, hay viết bài đăng mạng xã hội | *"Event review cho 3 talk hôm qua, đây là transcript và thư mục ảnh slide"* · *"Viết lại trọn talk này bằng tiếng Việt"* |
+| **bto-posthog** | — (tiện ích) | Sản phẩm đã có trang chạy thật, muốn biết người dùng vào đâu, bấm gì, event có về không | Chưa có site live, hoặc chỉ cần hỏi một con số lẻ | *"Kiểm PostHog của trang landing, event không về"* · *"Dựng dashboard tổng quan để mở project là thấy số"* |
 
 **Lưu ý:** `bto-whats-next` chỉ **đề xuất**, không tự làm. `bto-agent-team` yêu cầu bạn duyệt brief trước khi chạy wave.
 
@@ -161,4 +162,4 @@ Mở phiên agent **mới** sau khi pull.
 
 ---
 
-*Cập nhật: 28/09/2026, thêm bto-create-skill (11 skill, sau bto-posthog) và bto-event-review. 15/09/2026, wave 2: bto-sdlc, bto-agent-team, bto-whats-next, bto-page-quality, bto-optimize-mac.*
+*Cập nhật: 28/09/2026, thêm bto-create-skill và bto-posthog (11 skill), bto-event-review. 15/09/2026, wave 2: bto-sdlc, bto-agent-team, bto-whats-next, bto-page-quality, bto-optimize-mac.*
