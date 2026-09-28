@@ -1,6 +1,6 @@
 # Hướng dẫn cài skill Build to Own (wave 2)
 
-Tài liệu này dành cho học viên **chưa từng cài skill**. Năm skill mới bổ sung cho ba skill Buổi 2–3 (`bto-secrets`, `bto-researchmarket`, `bto-teardown`).
+Tài liệu này dành cho học viên **chưa từng cài skill**. Sáu skill mới bổ sung cho ba skill Buổi 2–3 (`bto-secrets`, `bto-researchmarket`, `bto-teardown`).
 
 Repo: [github.com/sonpiaz/bto-skills](https://github.com/sonpiaz/bto-skills)
 
@@ -14,7 +14,7 @@ Tên skill luôn **tiếng Anh**, có tiền tố `bto-`. Nội dung hướng d�
 
 ---
 
-## Năm skill mới — dùng khi nào
+## Sáu skill mới, dùng khi nào
 
 | Skill | Buổi học | Dùng khi | Không dùng khi | Ví dụ câu gọi |
 |---|---|---|---|---|
@@ -23,6 +23,7 @@ Tên skill luôn **tiếng Anh**, có tiền tố `bto-`. Nội dung hướng d�
 | **bto-whats-next** | 7 | Cuối session, không biết làm gì tiếp; cần rà việc dở | Đang giữa việc, muốn agent làm luôn | *"Giờ làm gì tiếp?"* · *"Tóm lại session còn gì chưa xong?"* |
 | **bto-page-quality** | 5, 8 | Trang chậm, Core Web Vitals, đo trước/sau deploy, analytics sau launch | Backend thuần, chưa có site live | *"Trang landing LCP bao nhiêu?"* · *"Đo chất lượng trang trước khi launch"* |
 | **bto-optimize-mac** | — (tiện ích) | Mac đầy disk, RAM cao, nhiều agent/build cùng lúc | Máy Windows/Linux (skill này cho macOS) | *"Ổ đĩa còn mấy GB, dọn an toàn giúp tôi"* · *"Máy chậm, đo RAM rồi đề xuất dọn"* |
+| **bto-event-review** | — (tiện ích) | Đi hội nghị, meetup về, có ghi âm hoặc transcript và ảnh slide, muốn đọc lại trọn từng talk | Chỉ cần tóm tắt ngắn, hay viết bài đăng mạng xã hội | *"Event review cho 3 talk hôm qua, đây là transcript và thư mục ảnh slide"* · *"Viết lại trọn talk này bằng tiếng Việt"* |
 
 **Lưu ý:** `bto-whats-next` chỉ **đề xuất**, không tự làm. `bto-agent-team` yêu cầu bạn duyệt brief trước khi chạy wave.
 
@@ -32,11 +33,11 @@ Tên skill luôn **tiếng Anh**, có tiền tố `bto-`. Nội dung hướng d�
 
 ## Cách cài — Claude Code (khuyến nghị)
 
-### Cách A: Cài cả repo (8 skill, một lệnh)
+### Cách A: Cài cả repo (9 skill, một lệnh)
 
 Mở **Claude Code**, dán nguyên câu này:
 
-> Cài bto-skills: chạy `git clone https://github.com/sonpiaz/bto-skills.git ~/.claude/skills/bto-skills && ~/.claude/skills/bto-skills/setup` rồi xác nhận tám skill `bto-*` đã nhận.
+> Cài bto-skills: chạy `git clone https://github.com/sonpiaz/bto-skills.git ~/.claude/skills/bto-skills && ~/.claude/skills/bto-skills/setup` rồi xác nhận chín skill `bto-*` đã nhận.
 
 Hoặc tự chạy trong Terminal:
 
@@ -150,4 +151,4 @@ Mở phiên agent **mới** sau khi pull.
 
 ---
 
-*Cập nhật: 15/09/2026 — wave 2: bto-sdlc, bto-agent-team, bto-whats-next, bto-page-quality, bto-optimize-mac.*
+*Cập nhật: 28/09/2026, thêm bto-event-review (9 skill). 15/09/2026, wave 2: bto-sdlc, bto-agent-team, bto-whats-next, bto-page-quality, bto-optimize-mac.*
