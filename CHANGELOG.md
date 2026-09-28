@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.10 · 2026-09-28
+
+- Thêm `bto-posthog`: kiểm PostHog của sản phẩm bạn theo một chuẩn đầy đủ (cài đặt project, SDK theo loại site, identify/reset, event quan trọng, reverse proxy), dựng dashboard tổng quan đặt làm trang Home, rồi đo lại để chắc số về đúng project. Kèm ví dụ bố cục dashboard và checklist một trang. Đã cài bằng `setup` thì chạy `git pull` rồi `setup` để nhận skill mới.
+
 ## 0.0.8 · 2026-09-28
 
 - `HUONG-DAN-HOC-VIEN.md`: đếm đúng chín skill (lệnh cài và tiêu đề Cách A còn ghi tám), thêm `bto-event-review` vào bảng dùng khi nào. README đã đúng từ 0.0.6.
