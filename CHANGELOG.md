@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.8 · 2026-09-28
+
+- `HUONG-DAN-HOC-VIEN.md`: đếm đúng chín skill (lệnh cài và tiêu đề Cách A còn ghi tám), thêm `bto-event-review` vào bảng dùng khi nào. README đã đúng từ 0.0.6.
+
 ## 0.0.7 · 2026-09-28
 
 - Mô tả (`description`) của `bto-event-review` và `bto-optimize-mac` chuyển sang tiếng Việt, cho khớp bảy skill còn lại. Tên skill giữ tiếng Anh, mô tả tiếng Việt để bạn đọc là biết khi nào gọi. Sửa luôn lỗi frontmatter của `bto-event-review` (mô tả cũ có dấu hai chấm làm YAML không đọc được). Tên và cách gọi không đổi, không cần cài lại.
