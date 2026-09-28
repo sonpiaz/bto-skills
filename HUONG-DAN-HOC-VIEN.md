@@ -1,6 +1,6 @@
 # Hướng dẫn cài skill Build to Own (wave 2)
 
-Tài liệu này dành cho học viên **chưa từng cài skill**. Sáu skill mới bổ sung cho ba skill Buổi 2–3 (`bto-secrets`, `bto-researchmarket`, `bto-teardown`).
+Tài liệu này dành cho học viên **chưa từng cài skill**. Sáu skill mới bổ sung cho ba skill Buổi 2–3 (`bto-secrets`, `bto-researchmarket`, `bto-teardown`), cộng `bto-create-skill` để bạn tự tạo skill của riêng mình.
 
 Repo: [github.com/sonpiaz/bto-skills](https://github.com/sonpiaz/bto-skills)
 
@@ -31,13 +31,23 @@ Tên skill luôn **tiếng Anh**, có tiền tố `bto-`. Nội dung hướng d�
 
 ---
 
+## Tự tạo skill của riêng bạn (0.0.9)
+
+| Skill | Dùng khi | Không dùng khi | Ví dụ câu gọi |
+|---|---|---|---|
+| **bto-create-skill** | Một việc nhiều bước bạn đã làm từ 2 lần, muốn agent nhớ luôn cách làm | Việc chỉ làm một lần (viết prompt là đủ), hoặc lỗi máy tự chặn được (làm hook, script) | *"Làm thành skill việc vừa rồi"* · *"Tạo skill viết release note cho repo này"* |
+
+Skill hỏi bạn năm câu, viết `SKILL.md` theo [template một trang](bto-create-skill/TEMPLATE.md), chạy thử trên một ca thật trong phiên mới, rồi cài vào máy.
+
+---
+
 ## Cách cài — Claude Code (khuyến nghị)
 
-### Cách A: Cài cả repo (9 skill, một lệnh)
+### Cách A: Cài cả repo (mọi skill, một lệnh)
 
 Mở **Claude Code**, dán nguyên câu này:
 
-> Cài bto-skills: chạy `git clone https://github.com/sonpiaz/bto-skills.git ~/.claude/skills/bto-skills && ~/.claude/skills/bto-skills/setup` rồi xác nhận chín skill `bto-*` đã nhận.
+> Cài bto-skills: chạy `git clone https://github.com/sonpiaz/bto-skills.git ~/.claude/skills/bto-skills && ~/.claude/skills/bto-skills/setup` rồi xác nhận mười một skill `bto-*` đã nhận.
 
 Hoặc tự chạy trong Terminal:
 
@@ -151,4 +161,4 @@ Mở phiên agent **mới** sau khi pull.
 
 ---
 
-*Cập nhật: 28/09/2026, thêm bto-event-review (9 skill). 15/09/2026, wave 2: bto-sdlc, bto-agent-team, bto-whats-next, bto-page-quality, bto-optimize-mac.*
+*Cập nhật: 28/09/2026, thêm bto-create-skill (11 skill, sau bto-posthog) và bto-event-review. 15/09/2026, wave 2: bto-sdlc, bto-agent-team, bto-whats-next, bto-page-quality, bto-optimize-mac.*

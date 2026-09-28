@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.10 · 2026-09-28
+
+- Thêm `bto-create-skill`, skill tạo skill: hỏi trước việc này có nên là skill không (việc một lần thì viết prompt, lỗi máy chặn được thì làm hook hoặc script), rồi hỏi năm câu, viết `SKILL.md`, chạy thử trên một ca thật trong phiên mới, thêm eval đếm được và sổ feedback, cài vào Claude Code hoặc Cursor. Kèm `bto-create-skill/TEMPLATE.md`, template `SKILL.md` một trang có ghi chú hướng dẫn tiếng Việt. Đã cài bằng `setup` thì chạy lại `git pull` và `setup` để nhận skill mới.
+
 ## 0.0.9 · 2026-09-28
 
 - Thêm `bto-posthog`: kiểm PostHog của sản phẩm bạn theo một chuẩn đầy đủ (cài đặt project, SDK theo loại site, identify/reset, event quan trọng, reverse proxy), dựng dashboard tổng quan đặt làm trang Home, rồi đo lại để chắc số về đúng project. Kèm ví dụ bố cục dashboard và checklist một trang. Đã cài bằng `setup` thì chạy `git pull` rồi `setup` để nhận skill mới.
