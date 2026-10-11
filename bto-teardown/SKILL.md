@@ -43,6 +43,13 @@ làm sẵn việc này, hoặc tự chụp màn hình từng đoạn).
 **Chỉ dùng thứ công khai.** Không crack, không lấy dữ liệu sau login của
 người khác, không mua tài khoản để trích xuất code.
 
+**Thư mục của đội A nằm ngoài mọi repo sản phẩm.** Đặt nó cạnh repo, ví dụ
+`research-<mảng>/`, đừng đặt bên trong. Đừng đặt theo tên sản phẩm gốc. Không
+bao giờ commit `input/`, `analysis/` hay bản audit vào repo sẽ build. Bản gốc
+mở mã theo license copyleft (GPL, AGPL) thì luật này càng chặt: chỉ cần một
+đoạn code lọt vào repo đóng là có thể buộc cả sản phẩm phải mở mã. Trước khi
+clone, ghi lại license và phiên bản của bản gốc vào `step0.md`.
+
 ## Bước 2 — Phân rã ra core, không tả vỏ
 
 Từ `input/`, cho agent bóc thành các file phân tích:
@@ -54,6 +61,16 @@ api-endpoints.md   sản phẩm nói chuyện với server bằng những đư�
 tech-stack.md      chạy bằng gì, tự build phần nào, thuê phần nào
 pricing.md         giá từng gói, tính tiền theo gì · cột bắt buộc
 ```
+
+**App desktop hoặc tiện ích hệ thống** thì thay `api-endpoints.md` bằng
+`system-interfaces.md`. Loại sản phẩm này ít nói chuyện với server, phần ruột
+nằm ở chỗ nó làm việc với hệ điều hành. File này ghi: các dịch vụ của hệ điều
+hành mà sản phẩm dùng; quyền và entitlement nó xin; các thành phần chạy với
+quyền cao; các kênh giao tiếp giữa các thành phần; file và thư mục nó ghi; và
+nó làm gì khi bị từ chối quyền hay khi một thành phần chết.
+
+Mỗi file nên kết thúc bằng mục **"Khoảng trống"**, ghi những thứ bản gốc không
+làm hoặc làm dở. Wedge ở Bước 4 thường nằm sẵn trong mục này.
 
 **Luật sạch phòng, không thương lượng:** trong mọi file phân tích, mô tả bằng
 lời, KHÔNG dán quá 3 dòng code, không chép nguyên văn đoạn chữ nào dài quá
@@ -67,9 +84,57 @@ Từ các file phân tích, viết `SPEC.md`: mỗi tính năng mô tả ngườ
 **cái gì KHÔNG làm**. Đúng khung spec một trang đã học ở Buổi 2, nhân lên
 theo từng tính năng.
 
-Bài kiểm: mở một phiên agent MỚI, dán SPEC, bảo build thử một tính năng. Nó
-hỏi lại về hành vi (thay vì chỉ hỏi về lựa chọn kỹ thuật) nghĩa là spec chưa
-đủ, viết tiếp.
+Spec có thêm hai phần mà agent build cần ngay từ dòng đầu:
+
+- **Mục "Thuật ngữ" ở đầu file.** Mỗi khái niệm (ví dụ "luật", "kết nối đang
+  chờ") có đúng một tên và dùng nhất quán. Đa số câu hỏi ở lượt thử đầu tiên
+  là do một thứ bị gọi bằng hai tên.
+- **Mục "Câu hỏi mở cho chủ sản phẩm" ở cuối file.** Mặc định nào bạn tự chọn
+  nhưng cần chủ sản phẩm duyệt thì ghi vào đây. Duyệt xong, đổi tên mục thành
+  "Quyết định đã chốt" kèm ngày. Spec chỉ qua tường khi mục này không còn câu
+  hỏi.
+
+### Thử bức tường thành vòng lặp, chạy tới khi hết câu chặn
+
+Thử một lượt là không đủ. Với một sản phẩm có nhiều trạng thái (firewall,
+trình đồng bộ, trình soạn thảo), thường phải 6 tới 8 lượt mới hết câu chặn.
+Mỗi lượt làm như sau:
+
+1. Chép **chỉ** `SPEC.md` vào một thư mục tạm mới, ví dụ `wall-test<N>/`.
+2. Mở một agent **MỚI**, chưa đọc gì từ phiên này. Bảo nó chỉ đọc file đó rồi
+   lên kế hoạch build. Dán đoạn lệnh bên dưới.
+3. Xếp mọi câu hỏi về hành vi thành hai loại:
+   - **CHẶN:** hai kỹ sư giỏi sẽ build ra hai hành vi khác nhau thấy được.
+     Sửa spec để trả lời.
+   - **NHỎ:** có một mặc định hợp lý. Ghi mặc định đó vào spec để lượt sau
+     không hỏi lại.
+4. Trước khi sửa, lưu bản spec hiện tại thành `SPEC.round<N>.md`. Sửa sai thì
+   còn bản để quay lại, và số câu chặn qua từng lượt cho thấy spec có đang
+   hội tụ hay không.
+5. **Nới phạm vi dần.** Lượt 1 chỉ build phần lõi, ví dụ thứ tự quyết định.
+   Các lượt sau tăng tới toàn bộ v1. Phạm vi nới ra mà câu chặn tăng nhẹ là
+   bình thường.
+6. **Dừng khi một lượt trả về 0 câu chặn** và câu nhỏ nào cũng đã có mặc định.
+   Câu chặn của lượt cuối mới được trả lời thì chưa tính là xong, phải chạy
+   thêm một lượt để xác nhận.
+7. **Khi gần xong, mỗi lượt chạy 2 agent độc lập trên cùng một bản spec.** Hai
+   agent thường tìm ra những câu nhỏ khác nhau. Câu chặn mà cả hai cùng nêu
+   là chỗ spec yếu thật, sửa chỗ đó trước.
+
+Đoạn lệnh cho agent thử tường:
+
+```
+Chỉ đọc <đường dẫn>/SPEC.md. Không đọc file, repo hay trang web nào khác.
+Không sửa file nào. Lên kế hoạch build <phạm vi>. Với mỗi chỗ phải hỏi chủ
+sản phẩm về HÀNH VI (người dùng thấy gì, cái gì được phép, trường hợp biên)
+vì spec im lặng, mơ hồ hoặc mâu thuẫn, hãy ghi một câu hỏi. Không ghi lựa
+chọn kỹ thuật. Xếp từng câu thành CHẶN hoặc NHỎ; câu NHỎ thì kèm mặc định bạn
+sẽ chọn. Trả về: số câu mỗi loại, hai danh sách, và một dòng "build được
+phần 1 hôm nay không".
+```
+
+Nhật ký thật để tham khảo: spec của một firewall outbound trên macOS có số câu chặn qua
+các lượt là 21 → 7 → 4 → 5 (lượt này nới phạm vi ra toàn bộ v1) → 2 → 2 → 2 → 0, tổng cộng 8 lượt. Ba lượt cuối mỗi lượt chỉ còn 2 câu chặn, nhưng mỗi lần là 2 câu mới và nằm sâu hơn, ví dụ một app thuộc hai công tắc tin cậy cùng lúc. Đó là dấu hiệu spec đang hội tụ, không phải dậm chân tại chỗ. Lượt cuối có 2 agent độc lập, cả hai cùng về 0.
 
 ## Bước 4 — Đặt tên riêng và tìm wedge
 
@@ -81,6 +146,11 @@ hỏi lại về hành vi (thay vì chỉ hỏi về lựa chọn kỹ thuật) 
   thứ có trong SPEC mà không có trong câu trả lời thì cân nhắc bỏ hẳn; thứ
   có trong câu trả lời mà SPEC thiếu chính là wedge của bạn. Không có bước
   này thì ra một bản copy tốt hơn 5%, không phải sản phẩm khác 10 lần.
+- Ghi kết quả audit vào `audit.md` thành bảng ba cột: **bản gốc làm gì**,
+  **mình quyết định gì**, **vì sao**. Kết bằng một câu wedge. File này nhắc
+  tên bản gốc, nên nó ở lại phía đội A, không qua tường.
+- **Spec không nhắc tên bản gốc ở bất kỳ đâu**, kể cả để so sánh. Agent build
+  thấy cái tên là có lý do để đi tìm bản gốc.
 
 ## Bước 5 — Build sau bức tường
 
@@ -94,6 +164,34 @@ Không hỏi tôi về hành vi, chỉ hỏi về lựa chọn kỹ thuật. Bui
 
 Từ lúc này, phiên cũ không sinh code, phiên mới không xem bản gốc. Thiếu gì
 trong spec thì quay lại phiên cũ sửa spec, rồi chép bản mới sang.
+
+**Danh sách việc v0.1** (`V0.1-TASKS.md`) là các phần đánh số theo thứ tự
+build. Mỗi phần trỏ tới mục tương ứng trong spec và kết thúc khi test của
+phần đó xanh. Phần 1 nên là lõi thuần, chưa đụng hệ thống: logic quyết định
+cộng một bộ giả lập và đồng hồ giả, để test được mọi trường hợp biên mà
+không cần quyền gì.
+
+**Build trong một repo sản phẩm** thì repo đó là phía đội B. Nó chứa spec,
+danh sách việc và code, không có gì khác của đội A. Đặt spec ở `docs/spec/`.
+Thêm vào `CLAUDE.md` của repo một mục luật sạch phòng, để mọi phiên sau tự
+đọc thấy:
+
+- chỉ đọc file trong repo, không tìm code, tài liệu hay ảnh chụp của sản
+  phẩm cùng loại;
+- hành vi do spec quyết định, khoảng trống thì hỏi người giữ spec;
+- chữ trên giao diện viết mới hoàn toàn.
+
+## Tự kiểm trước khi spec qua tường
+
+- [ ] Thư mục đội A nằm ngoài mọi repo sản phẩm; license của bản gốc đã ghi
+- [ ] File phân tích không có đoạn code dài quá 3 dòng, không có câu chép
+      nguyên văn
+- [ ] Spec có mục Thuật ngữ, mục "Không làm trong v1", và không nhắc tên bản
+      gốc ở đâu cả
+- [ ] Lượt thử tường gần nhất trả về 0 câu chặn; mọi câu nhỏ đã có mặc định
+- [ ] Mục câu hỏi mở đã được chủ sản phẩm chốt và ghi ngày
+- [ ] Đã có `audit.md` với câu wedge; có `V0.1-TASKS.md`
+- [ ] Chỉ `SPEC.md` và `V0.1-TASKS.md` qua tường
 
 ## Bước 6 — Đối chiếu
 

@@ -1,5 +1,32 @@
 # Changelog
 
+## 0.0.12 · 2026-10-11
+
+`bto-teardown` được nâng cấp sau một lần teardown thật (firewall outbound trên macOS, bản gốc mã nguồn mở GPL):
+
+- **Thử bức tường thành vòng lặp.** Mỗi lượt dùng một agent mới, chỉ đọc `SPEC.md` trong thư mục tạm. Câu hỏi xếp thành CHẶN hoặc NHỎ; mỗi lượt lưu `SPEC.round<N>.md`; phạm vi nới dần; dừng khi một lượt trả về 0 câu chặn. Có sẵn đoạn lệnh cho agent và nhật ký thật (21 → 7 → 4 → 5 → 2 → 2 → 2 → 0); khi gần xong, mỗi lượt chạy 2 agent độc lập.
+- **Spec có thêm mục Thuật ngữ và mục Câu hỏi mở cho chủ sản phẩm.** Chủ duyệt xong thì mục này đổi thành "Quyết định đã chốt", kèm ngày.
+- **Thư mục đội A nằm ngoài mọi repo sản phẩm**, kèm cảnh báo về license copyleft (GPL/AGPL).
+- **App desktop dùng `system-interfaces.md`** thay cho `api-endpoints.md`. Mỗi file phân tích kết bằng mục "Khoảng trống".
+- **`audit.md` dạng bảng ba cột**, ở lại phía đội A. Spec không nhắc tên bản gốc.
+- **Hướng dẫn cho `V0.1-TASKS.md`** (phần 1 là lõi thuần có giả lập) và cho repo phía đội B (`docs/spec/`, luật sạch phòng trong `CLAUDE.md`).
+- **Thêm checklist tự kiểm trước khi spec qua tường.**
+
+## 0.0.11 · 2026-10-11
+
+`bto-researchmarket` được nâng cấp sau đợt research thật (một suite tiện ích Mac/Windows, 10/2026):
+
+- **Thêm agent hồ sơ công ty.** Agent ghi năm thành lập, chủ sở hữu, các vòng gọi vốn, thương vụ, định giá. Nguồn ưu tiên là hồ sơ đăng ký doanh nghiệp (Companies House, SEC EDGAR) trước báo chí.
+- **Thêm biểu đồ định vị Giá trị × Tính năng.** Bộ tiêu chí chấm điểm chung cho mọi đối thủ, quy tắc tính "giá quy năm", và vẽ sản phẩm của mình ở các mức giá dự kiến.
+- **Thêm script `assets/positioning_chart.py`.** Đầu vào JSON; ra SVG để nhúng Markdown, hoặc bản `--inline` theo theme cho trang HTML, kèm bảng xếp hạng. Tự tránh nhãn đè nhau, tự đặt chú thích vào góc trống. Có dữ liệu mẫu đi kèm.
+- **Thêm mẹo đọc giá:**
+  - ép xem bản US/USD, vì IP Việt Nam trả giá VND hoặc EUR đã gồm VAT;
+  - đọc giá từ link checkout hoặc API giá khi trang pricing bị chặn;
+  - tính lại giá gạch, vì IObit "−87%" thực ra chỉ giảm khoảng 50%.
+- **Thêm nguồn review thay thế** khi Reddit, G2, Capterra chặn: bộ lọc sao của Trustpilot, Algolia API của Hacker News.
+- **Đoạn hợp đồng dán cho từng agent** giờ bắt buộc ép giá theo cửa hàng US/USD (ghi rõ vùng, tiền tệ, VAT) và ghi sẵn nguồn review thay thế (Trustpilot lọc sao, Algolia API của HN). Quy tắc chạy 4 agent khi nghiên cứu cả Mac lẫn Windows được ghi rõ.
+- **Checklist có thêm 3 mục:** vùng/tiền tệ của giá, biểu đồ định vị, bảng hồ sơ công ty.
+
 ## 0.0.10 · 2026-09-28
 
 - Thêm `bto-create-skill`, skill tạo skill: hỏi trước việc này có nên là skill không (việc một lần thì viết prompt, lỗi máy chặn được thì làm hook hoặc script), rồi hỏi năm câu, viết `SKILL.md`, chạy thử trên một ca thật trong phiên mới, thêm eval đếm được và sổ feedback, cài vào Claude Code hoặc Cursor. Kèm `bto-create-skill/TEMPLATE.md`, template `SKILL.md` một trang có ghi chú hướng dẫn tiếng Việt. Đã cài bằng `setup` thì chạy lại `git pull` và `setup` để nhận skill mới.
