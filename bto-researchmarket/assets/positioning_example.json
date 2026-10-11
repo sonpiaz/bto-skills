@@ -1,0 +1,186 @@
+{
+ "title": "Value × functionality: utility suites (example, read 2026-10-09)",
+ "rubric_size": 15,
+ "groups": {
+  "mac": {
+   "label": "Mac vendor",
+   "color": "#6B5CE8"
+  },
+  "win": {
+   "label": "Windows vendor",
+   "color": "#2F7BD6"
+  },
+  "both": {
+   "label": "Mac + Windows",
+   "color": "#8A6FD1"
+  },
+  "catalog": {
+   "label": "Subscription catalog",
+   "color": "#8A8F98"
+  }
+ },
+ "products": [
+  {
+   "name": "CleanMyMac",
+   "group": "mac",
+   "functionality": 10.5,
+   "effective_per_year": 39.99,
+   "basis": "Mac App Store yearly $39.99"
+  },
+  {
+   "name": "Parallels Toolbox",
+   "group": "both",
+   "functionality": 8.0,
+   "effective_per_year": 24.99,
+   "basis": "$24.99/yr (VAT-incl., VN view)"
+  },
+  {
+   "name": "Nektony MacCleaner Pro",
+   "group": "mac",
+   "functionality": 7.5,
+   "effective_per_year": 39.95,
+   "basis": "$39.95/yr, 1 Mac"
+  },
+  {
+   "name": "iStat Menus",
+   "group": "mac",
+   "functionality": 4.0,
+   "effective_per_year": 4.0,
+   "basis": "$11.99 one-time ÷ 3 yrs"
+  },
+  {
+   "name": "DaisyDisk",
+   "group": "mac",
+   "functionality": 1.5,
+   "effective_per_year": 3.33,
+   "basis": "$9.99 one-time ÷ 3 yrs"
+  },
+  {
+   "name": "BuhoCleaner",
+   "group": "mac",
+   "functionality": 7.5,
+   "effective_per_year": 17.99,
+   "basis": "$17.99/yr ('sale', no end date)"
+  },
+  {
+   "name": "MacKeeper",
+   "group": "mac",
+   "functionality": 7.5,
+   "effective_per_year": 71.4,
+   "basis": "$71.40/yr, 1 Mac"
+  },
+  {
+   "name": "Setapp (catalog)",
+   "group": "catalog",
+   "functionality": 13.0,
+   "effective_per_year": 107.88,
+   "basis": "$8.99/mo billed yearly; coverage assumed"
+  },
+  {
+   "name": "Little Snitch",
+   "group": "mac",
+   "functionality": 2.5,
+   "effective_per_year": 21.24,
+   "basis": "€59 one-time × 1.08 ÷ 3 yrs"
+  },
+  {
+   "name": "Gemini 2",
+   "group": "mac",
+   "functionality": 1.0,
+   "effective_per_year": 19.99,
+   "basis": "$19.99/yr"
+  },
+  {
+   "name": "IObit ASC Pro",
+   "group": "win",
+   "functionality": 7.0,
+   "effective_per_year": 16.77,
+   "basis": "$16.77/yr, 1 PC ('sale', permanent)"
+  },
+  {
+   "name": "IObit 3-in-1",
+   "group": "win",
+   "functionality": 8.5,
+   "effective_per_year": 29.99,
+   "basis": "$29.99/yr, 3 PCs"
+  },
+  {
+   "name": "CCleaner Pro Plus",
+   "group": "win",
+   "functionality": 7.5,
+   "effective_per_year": 64.95,
+   "basis": "renewal $64.95/yr, 3 devices"
+  },
+  {
+   "name": "Avast Ultimate",
+   "group": "win",
+   "functionality": 11.0,
+   "effective_per_year": 109.99,
+   "basis": "renewal $109.99/yr, 1 PC"
+  },
+  {
+   "name": "AVG TuneUp",
+   "group": "win",
+   "functionality": 9.0,
+   "effective_per_year": 65.99,
+   "basis": "renewal $65.99/yr, 1 PC"
+  },
+  {
+   "name": "Ashampoo WinOptimizer",
+   "group": "win",
+   "functionality": 7.5,
+   "effective_per_year": 8.33,
+   "basis": "$25 one-time ÷ 3 yrs, 1 PC"
+  },
+  {
+   "name": "Glary Utilities Pro",
+   "group": "win",
+   "functionality": 9.5,
+   "effective_per_year": 39.95,
+   "basis": "$39.95/yr, 3 PCs"
+  },
+  {
+   "name": "iolo Ultimate Defense",
+   "group": "win",
+   "functionality": 7.5,
+   "effective_per_year": 67.93,
+   "basis": "$67.93/yr sale, 10 devices"
+  },
+  {
+   "name": "Wise Care 365 Pro",
+   "group": "win",
+   "functionality": 6.0,
+   "effective_per_year": 29.96,
+   "basis": "$29.96/yr, 3 PCs"
+  },
+  {
+   "name": "Auslogics BoostSpeed",
+   "group": "win",
+   "functionality": 7.0,
+   "effective_per_year": 56.62,
+   "basis": "$56.62/yr, 3 PCs"
+  }
+ ],
+ "candidates": [
+  {
+   "name": "Your suite $39/yr",
+   "functionality": 7.5,
+   "effective_per_year": 39.0
+  },
+  {
+   "name": "Your suite $59 one-time",
+   "functionality": 7.5,
+   "effective_per_year": 19.67
+  },
+  {
+   "name": "Your suite $39 one-time",
+   "functionality": 7.5,
+   "effective_per_year": 13.0
+  }
+ ],
+ "highlight_zone": {
+  "min_functionality": 7,
+  "min_value": 3,
+  "label": "Broad + good value: open space"
+ }
+}
