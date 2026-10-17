@@ -11,6 +11,15 @@ mkdir -p "$DEST"
 for d in "$SRC"/*/; do
   name="$(basename "$d")"
   [ -f "$d/SKILL.md" ] || continue
+  # Ten cu (vd bto-secrets) chi la symlink toi ten moi, de may da cai van chay.
+  # Khong link them ten cu, va go link ten cu da cai, de khong co hai skill trung nhau.
+  if [ -L "$SRC/$name" ]; then
+    if [ -L "$DEST/$name" ] && [ "$(readlink "$DEST/$name")" = "$SRC/$name" ]; then
+      rm "$DEST/$name"
+      echo "go ten cu $name (da doi sang $(readlink "$SRC/$name"))"
+    fi
+    continue
+  fi
   target="$DEST/$name"
   if [ -e "$target" ] && [ ! -L "$target" ]; then
     echo "bo qua $name: $target da ton tai va khong phai do bto-skills tao ra"

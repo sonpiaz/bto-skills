@@ -1,6 +1,11 @@
 ---
 name: bto-optimize-mac
 description: Đo trước rồi mới dọn RAM và ổ đĩa trên macOS một cách an toàn. Cache sinh lại được thì tự dọn; dữ liệu cá nhân thì liệt kê ra để bạn duyệt; không bao giờ kill process bừa. Dùng khi ổ đĩa đầy, RAM cao (memory pressure), máy chậm, hoặc trước khi chạy build nặng. Gọi bằng "dọn máy", "ổ đĩa đầy", "tối ưu RAM", "optimize mac".
+metadata:
+  category: productivity
+  scope: bto
+  owner: cos-bto
+  version: "0.0.11"
 ---
 
 # /bto-optimize-mac

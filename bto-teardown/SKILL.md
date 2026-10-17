@@ -1,6 +1,11 @@
 ---
 name: bto-teardown
 description: Phân rã một sản phẩm có sẵn để hiểu ruột của nó, viết thành bản đặc tả sạch, rồi build bản của riêng mình trong một phiên làm việc mới chỉ đọc đặc tả. Đúng phương pháp clean-room hai đội mà ngành công nghệ dùng để học từ đối thủ không phạm luật. Kích hoạt khi nói "teardown", "phân rã sản phẩm", "reverse engineer", "build cái tương tự X", "sản phẩm X hoạt động thế nào".
+metadata:
+  category: research
+  scope: bto
+  owner: cos-bto
+  version: "0.0.11"
 ---
 
 # /bto-teardown
