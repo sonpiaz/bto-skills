@@ -1,6 +1,11 @@
 ---
 name: bto-page-quality
 description: Đo và cải thiện chất lượng trang web — tốc độ, Core Web Vitals, trải nghiệm theo quốc gia, hiển thị trên search, cache edge. Dùng khi hỏi "trang chậm", LCP/INP/CLS, bounce theo nước, điểm Lighthouse, hoặc trước/sau thay đổi frontend. Khớp Buổi 5 (log, cảnh báo) và Buổi 8 (đo sau launch).
+metadata:
+  category: monitoring
+  scope: bto
+  owner: cos-bto
+  version: "0.0.11"
 ---
 
 # /bto-page-quality

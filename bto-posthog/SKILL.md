@@ -1,6 +1,11 @@
 ---
 name: bto-posthog
 description: Kiểm và nâng cấp PostHog cho sản phẩm của bạn theo một chuẩn đầy đủ — cài đặt project, cách gắn SDK theo loại site, identify và reset khi đăng nhập/đăng xuất, event quan trọng, reverse proxy, và một dashboard tổng quan đặt làm trang Home để mở project là thấy hết số. Dùng khi nói "posthog", "gắn tracking", "analytics", "kiểm tracking", "event không về", "dashboard tổng quan", "mở posthog là thấy số", hoặc khi sắp launch một site cần đo người dùng. Không dùng cho tốc độ trang và Core Web Vitals chuyên sâu (dùng `bto-page-quality`), hay khi chỉ hỏi một con số lẻ trong PostHog.
+metadata:
+  category: monitoring
+  scope: bto
+  owner: cos-bto
+  version: "0.0.11"
 ---
 
 # /bto-posthog
@@ -19,7 +24,7 @@ dashboard Home** · **đo lại** để chắc số đã về đúng chỗ.
   gộp nhiều domain không liên quan vào một project, vì funnel, retention và
   bộ lọc đều tính theo project.
 - Agent đọc được PostHog: PostHog MCP (khuyên dùng) hoặc personal API key
-  đặt trong `.env`, không dán vào chat. Xem `bto-secrets`.
+  đặt trong `.env`, không dán vào chat. Xem `bto-secret-guard`.
 - Repo của site, nếu muốn sửa code.
 
 ## Bước 1 — Kiểm (chỉ đọc, không đổi gì)

@@ -11,8 +11,8 @@ từ sách. **Tên skill luôn tiếng Anh** (tiền tố `bto-`).
 
 | Skill | Dùng khi | Buổi |
 |---|---|---|
-| `/bto-secrets` | API key, `.env`, trước commit/push | 2 |
-| `/bto-researchmarket` | Research thị trường, TAM/SAM/SOM | 3 |
+| `/bto-secret-guard` | API key, `.env`, trước commit/push | 2 |
+| `/bto-research-market` | Research thị trường, TAM/SAM/SOM | 3 |
 | `/bto-teardown` | Phân rã sản phẩm, build clean-room | 3 |
 | `/bto-sdlc` | Feature/refactor lớn — spec trước, code sau | 2, 4 |
 | `/bto-agent-team` | Nhiều role agent, duyệt một lần chạy tới xong | 7 |

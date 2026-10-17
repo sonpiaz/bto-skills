@@ -1,6 +1,11 @@
 ---
 name: bto-agent-team
 description: Playbook duyệt một lần rồi chạy tới xong — build → review độc lập → sửa → merge → verify — với nhiều agent theo role (backend, frontend, design, data) trong các wave. Dùng khi nói "chia wave", "duyệt một lần chạy tới xong", "/bto-agent-team", hoặc giao thay đổi nhiều phần cùng lúc. Khớp Buổi 7 Build to Own.
+metadata:
+  category: productivity
+  scope: bto
+  owner: cos-bto
+  version: "0.0.11"
 ---
 
 # /bto-agent-team
