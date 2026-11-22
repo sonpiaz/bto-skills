@@ -16,7 +16,7 @@ từ sách. **Tên skill luôn tiếng Anh** (tiền tố `bto-`).
 | `/bto-teardown` | Phân rã sản phẩm, build clean-room | 3 |
 | `/bto-sdlc` | Feature/refactor lớn — spec trước, code sau | 2, 4 |
 | `/bto-agent-team` | Nhiều role agent, duyệt một lần chạy tới xong | 7 |
-| `/bto-whats-next` | Cuối session — việc dở, đề xuất bước kế | 7 |
+| `/bto-whats-next` | Đầu hoặc cuối session: việc mới từ team (Linear, GitHub), việc dở, đề xuất bước kế | 7 |
 | `/bto-page-quality` | Tốc độ trang, Core Web Vitals, sau launch | 5, 8 |
 | `/bto-optimize-mac` | Mac đầy disk/RAM, dọn an toàn | tiện ích |
 | `/bto-event-review` | Đi hội nghị về, viết lại trọn từng talk từ slide + transcript ([ví dụ](https://homus.dev)) | tiện ích |
