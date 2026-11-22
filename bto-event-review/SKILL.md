@@ -1,6 +1,11 @@
 ---
 name: bto-event-review
 description: Từ ghi âm hoặc transcript của một buổi talk, cùng ảnh chụp slide hoặc file slide, viết lại trọn vẹn và trung thực từng talk (không phải tóm tắt), mỗi talk một trang HTML kèm một trang mục lục. Dùng khi bạn muốn hiểu hết các talk ở một hội nghị, meetup hay sự kiện đã tham dự, khi nói "event review", "viết lại các talk này", "biến ghi âm thành tài liệu", "write up these talks", hoặc đưa transcript kèm một thư mục ảnh slide. Có thể chọn ngôn ngữ đầu ra, khi đó văn viết bằng ngôn ngữ đó còn technical term giữ tiếng Anh. Không dùng cho tóm tắt ngắn, ghi chú một video lẻ, hay bài đăng mạng xã hội về sự kiện.
+metadata:
+  category: learning
+  scope: bto
+  owner: cos-bto
+  version: "0.0.11"
 ---
 
 # /bto-event-review

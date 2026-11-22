@@ -1,9 +1,14 @@
 ---
-name: bto-secrets
+name: bto-secret-guard
 description: Giữ API key và mật khẩu an toàn khi giao việc cho AI agent, và đẩy code lên GitHub mà không làm lộ gì. Dùng khi chạm tới API key, secret, .env, 1Password, biến môi trường, khi nối một API hay MCP mới, trước khi commit hoặc push, khi dựng CI, khi cho người thứ hai hoặc một agent khác vào repo, và khi "merge rồi mà trang không đổi". Rút từ những lần hỏng thật, mỗi luật kèm chuyện đã xảy ra.
+metadata:
+  category: security
+  scope: bto
+  owner: cos-bto
+  version: "0.0.11"
 ---
 
-# /bto-secrets
+# /bto-secret-guard
 
 Giao việc cho agent mà không trao chìa khoá, và đẩy code mà không làm lộ gì.
 

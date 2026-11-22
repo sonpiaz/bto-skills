@@ -1,6 +1,11 @@
 ---
 name: bto-sdlc
 description: Chuỗi artifact intent → plan → build → verify → ship cho mọi việc đủ lớn trong repo. Dùng khi bạn bắt đầu feature mới, refactor lớn, hoặc nói "viết intent", "làm theo plan", "/bto-sdlc". Không dùng cho sửa một dòng, chẩn đoán nhanh, hay việc vận hành một lần.
+metadata:
+  category: development
+  scope: bto
+  owner: cos-bto
+  version: "0.0.11"
 ---
 
 # /bto-sdlc

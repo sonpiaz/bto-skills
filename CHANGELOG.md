@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.11 · 2026-10-17
+
+- Đổi tên hai skill cho khớp cách đặt tên chung (tiếng Anh, các chữ nối bằng gạch ngang, trùng tên skill gốc): `bto-researchmarket` → `bto-research-market`, `bto-secrets` → `bto-secret-guard`. Nội dung không đổi.
+- Tên cũ vẫn chạy: repo giữ `bto-researchmarket` và `bto-secrets` dưới dạng lối tắt tới tên mới, nên máy đã cài chưa cần làm gì. Muốn gọn thì chạy `git pull` rồi `./setup`: setup gỡ tên cũ khỏi `~/.claude/skills` và link tên mới, không bị hai skill trùng nhau.
+- Mỗi skill thêm khối `metadata` trong phần đầu `SKILL.md`: nhóm (`category`), phạm vi, người giữ, version. Claude Code và Cursor bỏ qua khối này, không ảnh hưởng cách gọi.
+
 ## 0.0.10 · 2026-09-28
 
 - Thêm `bto-create-skill`, skill tạo skill: hỏi trước việc này có nên là skill không (việc một lần thì viết prompt, lỗi máy chặn được thì làm hook hoặc script), rồi hỏi năm câu, viết `SKILL.md`, chạy thử trên một ca thật trong phiên mới, thêm eval đếm được và sổ feedback, cài vào Claude Code hoặc Cursor. Kèm `bto-create-skill/TEMPLATE.md`, template `SKILL.md` một trang có ghi chú hướng dẫn tiếng Việt. Đã cài bằng `setup` thì chạy lại `git pull` và `setup` để nhận skill mới.

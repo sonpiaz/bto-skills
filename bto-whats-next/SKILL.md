@@ -7,6 +7,11 @@ allowed-tools:
   - Read
   - Grep
   - Glob
+metadata:
+  category: productivity
+  scope: bto
+  owner: cos-bto
+  version: "0.0.11"
 ---
 
 # /bto-whats-next

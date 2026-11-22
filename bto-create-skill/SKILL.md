@@ -1,6 +1,11 @@
 ---
 name: bto-create-skill
 description: Giúp bạn biến một việc hay lặp lại thành skill của riêng mình, viết theo template SKILL.md một trang, chạy thử trên một ca thật, có eval đếm được và sổ feedback, rồi cài vào Claude Code hoặc Cursor. Dùng khi nói "tạo skill", "làm thành skill", "viết skill", "skill mới", "sửa skill", "create a skill", "turn this into a skill", hoặc khi bạn thấy mình dán lại cùng một prompt lần thứ hai. Không dùng khi việc chỉ làm một lần (viết prompt là đủ), hay khi cần một luật máy tự chặn được (làm hook hoặc script).
+metadata:
+  category: development
+  scope: bto
+  owner: cos-bto
+  version: "0.0.11"
 ---
 
 # /bto-create-skill
@@ -69,7 +74,7 @@ Copy [TEMPLATE.md](TEMPLATE.md), điền theo năm câu trả lời. Luật vi�
 - **Độ chặt theo rủi ro.** Đụng tiền, secret, production, gửi ra ngoài: ghi lệnh
   cụ thể và điểm dừng hỏi bạn. Việc cần phán đoán: ghi mục tiêu và ràng buộc.
 - **Không đặt secret, token, đường dẫn máy cá nhân** vào skill. Skill hay được
-  chia sẻ lại, và key trong file chia sẻ là key đã lộ (xem skill `bto-secrets`
+  chia sẻ lại, và key trong file chia sẻ là key đã lộ (xem skill `bto-secret-guard`
   trong cùng bộ). Việc cần "repo nào, thư mục nào" thì viết "repo đang mở" hoặc
   đường dẫn tương đối, không viết `/Users/…`.
 

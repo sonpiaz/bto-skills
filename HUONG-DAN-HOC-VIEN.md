@@ -1,6 +1,6 @@
 # Hướng dẫn cài skill Build to Own (wave 2)
 
-Tài liệu này dành cho học viên **chưa từng cài skill**. Bảy skill mới bổ sung cho ba skill Buổi 2–3 (`bto-secrets`, `bto-researchmarket`, `bto-teardown`), cộng `bto-create-skill` để bạn tự tạo skill của riêng mình.
+Tài liệu này dành cho học viên **chưa từng cài skill**. Bảy skill mới bổ sung cho ba skill Buổi 2–3 (`bto-secret-guard`, `bto-research-market`, `bto-teardown`), cộng `bto-create-skill` để bạn tự tạo skill của riêng mình.
 
 Repo: [github.com/sonpiaz/bto-skills](https://github.com/sonpiaz/bto-skills)
 
