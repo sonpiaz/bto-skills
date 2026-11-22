@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.14 · 2026-11-22
+
+- Thêm `bto-competitor-watch` cho vai Growth: một script Python (chỉ dùng thư viện chuẩn) kéo tin 24 giờ qua về đối thủ và sản phẩm thay thế từ Hacker News (không cần key), Product Hunt (token tuỳ chọn), X (tuỳ chọn, không có token thì báo cáo có link tìm kiếm), ghi `reports/competitors-<ngày>.md` có mục "Video ra mắt đáng học". Skill in lệnh hẹn giờ launchd/cron để bạn tự cài, máy ngủ thì lần sau kéo bù tối đa 72 giờ. Cấu hình và token nằm ở `~/.bto-skills/competitor-watch/`, không bao giờ in ra.
+- Đã cài bằng `setup` thì chạy `git pull` rồi `./setup` để nhận skill mới.
+
 ## 0.0.13 · 2026-11-22
 
 - Thêm eval đo được cho `bto-sdlc`, `bto-agent-team`, `bto-secret-guard`, `bto-page-quality`, `bto-teardown`: mỗi skill một file `evals/<skill>.md` (9 câu routing, 3-4 ca behaviour), kết quả ở `evals/RESULTS.md` (routing 45/45, mỗi skill đã chạy một ca behaviour). Mỗi skill có thêm mục Eval, Sổ feedback, Tự cải tiến.

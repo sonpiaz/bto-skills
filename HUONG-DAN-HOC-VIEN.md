@@ -48,7 +48,7 @@ Skill hỏi bạn năm câu, viết `SKILL.md` theo [template một trang](bto-c
 
 Mở **Claude Code**, dán nguyên câu này:
 
-> Cài bto-skills: chạy `git clone https://github.com/sonpiaz/bto-skills.git ~/.claude/skills/bto-skills && ~/.claude/skills/bto-skills/setup` rồi xác nhận mười một skill `bto-*` đã nhận.
+> Cài bto-skills: chạy `git clone https://github.com/sonpiaz/bto-skills.git ~/.claude/skills/bto-skills && ~/.claude/skills/bto-skills/setup` rồi xác nhận mười hai skill `bto-*` đã nhận.
 
 Hoặc tự chạy trong Terminal:
 

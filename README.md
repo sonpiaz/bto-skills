@@ -1,6 +1,6 @@
 # bto-skills
 
-**Mười một skill rút từ [Build to Own](https://build2own.dev), cài vào agent của bạn trong một phút.**
+**Mười hai skill rút từ [Build to Own](https://build2own.dev), cài vào agent của bạn trong một phút.**
 
 Một skill là một tệp hướng dẫn agent tự đọc khi gặp đúng loại việc. Bạn không
 phải nhớ quy trình, không phải dán lại prompt mỗi lần. Agent thấy bạn chạm tới
@@ -18,6 +18,7 @@ từ sách. **Tên skill luôn tiếng Anh** (tiền tố `bto-`).
 | `/bto-agent-team` | Nhiều role agent, duyệt một lần chạy tới xong | 7 |
 | `/bto-whats-next` | Đầu hoặc cuối session: việc mới từ team (Linear, GitHub), việc dở, đề xuất bước kế | 7 |
 | `/bto-page-quality` | Tốc độ trang, Core Web Vitals, sau launch | 5, 8 |
+| `/bto-competitor-watch` | Growth: báo cáo đối thủ mỗi sáng từ Hacker News, Product Hunt, X, có mục video ra mắt | Master 5 |
 | `/bto-optimize-mac` | Mac đầy disk/RAM, dọn an toàn | tiện ích |
 | `/bto-event-review` | Đi hội nghị về, viết lại trọn từng talk từ slide + transcript ([ví dụ](https://homus.dev)) | tiện ích |
 | `/bto-posthog` | Gắn và kiểm PostHog đủ chuẩn, dashboard Home mở ra là thấy số | tiện ích |
@@ -30,7 +31,7 @@ từ sách. **Tên skill luôn tiếng Anh** (tiền tố `bto-`).
 
 Mở Claude Code và dán câu này, agent tự làm phần còn lại:
 
-> Cài bto-skills: chạy `git clone https://github.com/sonpiaz/bto-skills.git ~/.claude/skills/bto-skills && ~/.claude/skills/bto-skills/setup` rồi xác nhận mười một skill `bto-*` đã nhận.
+> Cài bto-skills: chạy `git clone https://github.com/sonpiaz/bto-skills.git ~/.claude/skills/bto-skills && ~/.claude/skills/bto-skills/setup` rồi xác nhận mười hai skill `bto-*` đã nhận.
 
 Hoặc tự chạy hai lệnh:
 
@@ -72,7 +73,7 @@ Skill giúp agent nhớ luật. Bạn vẫn duyệt trước khi thứ gì rời
 
 ## Chương trình đầy đủ
 
-Mười một skill này là một phần **Build to Own** — bốn tuần từ vấn đề thật tới sản phẩm
+Mười hai skill này là một phần **Build to Own** — bốn tuần từ vấn đề thật tới sản phẩm
 có thanh toán quốc tế và team agent. **[build2own.dev](https://build2own.dev)**
 
 ---
