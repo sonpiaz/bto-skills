@@ -34,6 +34,8 @@ Viết `docs/plans/handoff/<date>-<work>-wave<N>.md` (hoặc thư mục plan c�
 
 Liệt kê **mọi quyền** run sẽ cần (DB prod, merge, secret, env, gửi mail) trong cùng tin duyệt. Bị classifier chặn giữa chừng: ghi đúng lệnh để bạn chạy, làm tiếp phần khác.
 
+Duyệt một lần cho nhiều wave: một file brief chung được, mỗi wave một mục. Ticket chưa có đích bằng số thì ghi là câu hỏi mở trong brief, không tự đặt số rồi coi như đã chốt.
+
 **Prompt dài:** đặt brief trong file; lệnh spawn chỉ một câu ngắn trỏ tới file đó. Prompt cắt giữa chuỗi = agent không start.
 
 ---
@@ -110,3 +112,29 @@ Ghi rõ trong brief và `AGENTS.md`:
 - Mỗi agent có identity (tên, log) để audit.
 
 Ba sai lầm chết người cần chặn ở tầng tool: tự deploy prod, tự gửi mail khách, tự tiêu tiền API.
+
+---
+
+## Eval
+
+Ca chạy và kết quả: `evals/bto-agent-team.md`, `evals/RESULTS.md` ở gốc repo bto-skills.
+
+| Chỉ số | Cách đo | Đích |
+|---|---|---|
+| Gọi đúng lúc | 5 câu nên gọi + 4 câu nghe giống, đếm câu xử lý đúng | ≥ 8/9 |
+| Brief đủ mục | đếm 6 mục ở §0 trong file brief | 6/6 |
+| File chồng nhau | file xuất hiện ở hai ticket trong bảng contract | 0 |
+| Tự duyệt, tự merge khi chưa xanh | lần người viết tự duyệt, hay merge trước khi check xanh | 0 |
+
+## Sổ feedback
+
+| Ngày | Chuyện gì xảy ra | Đã sửa gì |
+|---|---|---|
+| 22/11/2026 | Chạy B1 bằng agent mới chỉ đọc SKILL.md, 14 chỗ phải đoán. Brief đủ 6 mục, thứ tự merge đúng, nhưng phải đoán một file hay mỗi wave một file, và tự đặt đích p75 khi ticket không có số | Thêm câu về brief nhiều wave và ticket chưa có đích số |
+
+## Skill này phải tự tốt lên
+
+1. **Eval sau mỗi lần chạy.** Chấm theo bảng Eval. Thiếu bước nào hay người dùng phải sửa tay chỗ nào thì sửa đúng mục đó và thêm một dòng Sổ feedback.
+2. **Thi thoảng lookup để update.** Cách spawn agent, worktree, giới hạn quota đổi theo công cụ. Luật nào trong §3 không còn đúng với công cụ bạn dùng thì kiểm lại rồi sửa.
+3. **Có model mạnh hơn thì chạy lại ca thử.** Dòng nào không còn cần thì bỏ.
+4. **Không biết thì hỏi người.** Hỏi trong Discord của Build to Own, hoặc hỏi Sơn Piaz.

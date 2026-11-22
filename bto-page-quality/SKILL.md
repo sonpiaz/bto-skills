@@ -16,7 +16,7 @@ Một câu hỏi: **site có tốt không, và với ai?** Trả lời bằng nh
 
 ## Bốn bẫy đã từng gây kết luận sai
 
-**1. Headless browser chiếm p75 trang ít traffic.** PostHog/Web Vitals có thể báo LCP 20–30s trong khi PageSpeed mobile ~99. Mẫu hai cụm: nhanh hoặc >10s, không giữa — thường là bot Linux desktop (FCP = LCP). Lọc LCP ≥ 10s trước khi tin tab RUM thô.
+**1. Headless browser chiếm p75 trang ít traffic.** PostHog/Web Vitals có thể báo LCP 20–30s trong khi PageSpeed mobile ~99. Mẫu hai cụm: nhanh hoặc >10s, không giữa, thường là bot Linux desktop (FCP = LCP). Lọc LCP ≥ 10s trước khi tin tab RUM thô, rồi kiểm chéo: cụm đã bỏ có cùng OS và FCP = LCP không. Báo p75 trước và sau lọc, mỗi số kèm số mẫu, và số mẫu bỏ theo từng lý do.
 
 **2. Operator không phải thị trường.** `/admin` với vài chục sample có thể là một người. Loại path admin/internal khỏi báo cáo công khai.
 
@@ -94,3 +94,29 @@ Search Console (indexing, structured data), analytics weekly digest, deploy fail
 Thêm nguồn chỉ khi trả lời câu hỏi mà năm nguồn trên không trả lời được. Ngưỡng đổi thì đổi trong script kèm lý do đo được.
 
 **Rule of three:** lần thứ ba viết ad-hoc query CWV/GSC cho cùng câu hỏi → đưa vào script/skill.
+
+---
+
+## Eval
+
+Ca chạy và kết quả: `evals/bto-page-quality.md`, `evals/RESULTS.md` ở gốc repo bto-skills.
+
+| Chỉ số | Cách đo | Đích |
+|---|---|---|
+| Gọi đúng lúc | 5 câu nên gọi + 4 câu nghe giống, đếm câu xử lý đúng | ≥ 8/9 |
+| p75 sau lọc đúng | so với đáp số của fixture B1 | lệch ≤ 0,1 giây |
+| Kết luận "chậm" từ số thô | đếm câu kết luận dựa trên p75 chưa lọc bot và admin | 0 |
+| Delta từ một lần chạy lab | đếm kết luận "deploy làm chậm" dựa trên một lần Lighthouse | 0 |
+
+## Sổ feedback
+
+| Ngày | Chuyện gì xảy ra | Đã sửa gì |
+|---|---|---|
+| 22/11/2026 | Chạy B1 (RUM giả lập có bot headless và /admin) bằng agent mới chỉ đọc SKILL.md, 11 chỗ phải đoán. Ra đúng p75 2,17 và 2,03 giây, kết luận không chậm. Phải đoán lọc theo ngưỡng hay theo OS, và có báo số mẫu không | Bẫy 1 thêm bước kiểm chéo và cách báo số mẫu |
+
+## Skill này phải tự tốt lên
+
+1. **Eval sau mỗi lần chạy.** Chấm theo bảng Eval. Thiếu bước nào hay người dùng phải sửa tay chỗ nào thì sửa đúng mục đó và thêm một dòng Sổ feedback.
+2. **Thi thoảng lookup để update.** API của CrUX, PageSpeed, Search Console và ngưỡng Core Web Vitals đổi theo thời gian. Số nào đã vài tháng tuổi thì kiểm lại từ tài liệu gốc trước khi tin.
+3. **Có model mạnh hơn thì chạy lại ca thử.** Dòng nào không còn cần thì bỏ.
+4. **Không biết thì hỏi người.** Hỏi trong Discord của Build to Own, hoặc hỏi Sơn Piaz.

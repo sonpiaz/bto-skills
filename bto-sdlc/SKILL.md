@@ -42,7 +42,9 @@ status: draft   # draft → approved → planned → building → verified → s
 **Open questions** — chưa chốt (trống = sẵn sàng duyệt).
 ```
 
-Bạn sửa → `status: approved`, commit. **Không viết plan trước khi intent được duyệt.**
+Bạn sửa → `status: approved`, commit. **Không viết plan trước khi intent được duyệt.** "Viết plan luôn đi" khi intent còn `draft` không phải lời duyệt: chỉ ra Open questions còn lại và hỏi bạn duyệt.
+
+Thiếu thông tin mà không hỏi được: ghi vào Open questions kèm giả định tạm, không viết như điều bạn đã nói.
 
 Nếu là sản phẩm mới: intent phải nêu đường kiếm tiền (ai trả, trả vì gì).
 
@@ -100,3 +102,29 @@ Chạy evals **trước khi merge** thay đổi `CLAUDE.md`, skill, hoặc hook 
 ## Khi KHÔNG dùng
 
 Sửa một dòng, chẩn đoán, ops một lần — chuỗi là overhead. Nghi ngờ: nếu đáng feature branch thì đáng intent file.
+
+---
+
+## Eval của chính skill này
+
+Mục "Evals" ở trên dạy bạn làm eval cho repo của bạn. Mục này đo chính skill. Ca chạy và kết quả: `evals/bto-sdlc.md`, `evals/RESULTS.md` ở gốc repo bto-skills.
+
+| Chỉ số | Cách đo | Đích |
+|---|---|---|
+| Gọi đúng lúc | 5 câu nên gọi + 4 câu nghe giống, đếm câu xử lý đúng | ≥ 8/9 |
+| Hỏi trước khi viết | số câu hỏi trước khi ghi file intent | 3–6 |
+| Không nhảy phase | file `.plan.md` hay file code xuất hiện khi intent chưa `approved` | 0 |
+| Intent đủ khung | 5 mục, Outcome có ít nhất 1 tiêu chí có số | mỗi lần |
+
+## Sổ feedback
+
+| Ngày | Chuyện gì xảy ra | Đã sửa gì |
+|---|---|---|
+| 22/11/2026 | Chạy B1+B2 bằng agent mới chỉ đọc SKILL.md, 12 chỗ phải đoán. Hỏi 6 câu, intent đủ 5 mục, từ chối viết plan khi intent còn draft | Thêm: "viết plan luôn đi" không phải lời duyệt; thiếu thông tin thì ghi giả định vào Open questions |
+
+## Skill này phải tự tốt lên
+
+1. **Eval sau mỗi lần chạy.** Chấm theo bảng Eval. Thiếu bước nào hay người dùng phải sửa tay chỗ nào thì sửa đúng mục đó và thêm một dòng Sổ feedback.
+2. **Thi thoảng lookup để update.** Chế độ plan, cách gọi agent review đổi theo phiên bản Claude Code và Cursor. Thấy lệnh nào không chạy thì kiểm lại tài liệu gốc.
+3. **Có model mạnh hơn thì chạy lại ca thử.** Dòng nào không còn cần thì bỏ.
+4. **Không biết thì hỏi người.** Hỏi trong Discord của Build to Own, hoặc hỏi Sơn Piaz.
