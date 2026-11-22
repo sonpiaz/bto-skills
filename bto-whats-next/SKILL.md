@@ -73,7 +73,7 @@ Không quét `TODO:` trong code, quá nhiễu.
   Mọi ký tự không phải chữ/số thành `-`, nên `/.internal` thành `--internal`. Không thấy thư mục (bản Claude Code cũ giữ dấu chấm) thì `find "$CFG/projects/" -maxdepth 1 -name "*$(basename "$PWD")*"`.
   Đang đứng ở thư mục con của repo thì xem thêm phiên ở gốc repo (`git rev-parse --show-toplevel`).
   Lấy chữ: `jq -r 'select(.type=="assistant") | .message.content[]? | select(.type=="text") | .text' <file> | tail -n 150`.
-- Codex: `find ~/.codex/sessions -name 'rollout-*.jsonl' -mtime -14 -exec grep -l "\"cwd\":\"$PWD\"" {} + 2>/dev/null`;
+- Codex: `find ~/.codex/sessions -name 'rollout-*.jsonl' -mtime -14 -exec grep -Fl "\"cwd\":\"$PWD\"" {} + 2>/dev/null`;
   chữ ở `select(.type=="response_item" and .payload.type=="message" and .payload.role=="assistant") | .payload.content[]?.text`.
 - Cursor: `~/.cursor/projects/<đường dẫn bỏ / đầu, / thành ->/agent-transcripts/<id>/<id>.jsonl`;
   chữ ở `select(.role=="assistant") | .message.content[]? | select(.type=="text") | .text`.
