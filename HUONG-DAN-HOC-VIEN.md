@@ -20,7 +20,7 @@ Tên skill luôn **tiếng Anh**, có tiền tố `bto-`. Nội dung hướng d�
 |---|---|---|---|---|
 | **bto-sdlc** | 2, 4 | Feature mới, refactor lớn, cần spec trước code | Sửa một dòng, hỏi nhanh, việc ops một lần | *"Viết intent cho tính năng dark mode"* · *"Làm theo chuỗi SDLC, duyệt plan trước khi code"* |
 | **bto-agent-team** | 7 | Thay đổi nhiều phần (backend + frontend…), muốn duyệt một lần rồi agent chạy tới xong | Một file, một bug nhỏ | *"Chia wave cho ticket dashboard, viết brief rồi spawn role"* · *"Duyệt một lần, chạy build → review → merge"* |
-| **bto-whats-next** | 7 | Cuối session, không biết làm gì tiếp; cần rà việc dở | Đang giữa việc, muốn agent làm luôn | *"Giờ làm gì tiếp?"* · *"Tóm lại session còn gì chưa xong?"* |
+| **bto-whats-next** | 7 | Đầu ngày hoặc cuối session: team giao gì mới (Linear, PR chờ review), còn việc gì dở | Đang giữa việc, muốn agent làm luôn | *"Giờ làm gì tiếp?"* · *"Tóm lại session còn gì chưa xong?"* |
 | **bto-page-quality** | 5, 8 | Trang chậm, Core Web Vitals, đo trước/sau deploy, analytics sau launch | Backend thuần, chưa có site live | *"Trang landing LCP bao nhiêu?"* · *"Đo chất lượng trang trước khi launch"* |
 | **bto-optimize-mac** | — (tiện ích) | Mac đầy disk, RAM cao, nhiều agent/build cùng lúc | Máy Windows/Linux (skill này cho macOS) | *"Ổ đĩa còn mấy GB, dọn an toàn giúp tôi"* · *"Máy chậm, đo RAM rồi đề xuất dọn"* |
 | **bto-event-review** | — (tiện ích) | Đi hội nghị, meetup về, có ghi âm hoặc transcript và ảnh slide, muốn đọc lại trọn từng talk | Chỉ cần tóm tắt ngắn, hay viết bài đăng mạng xã hội | *"Event review cho 3 talk hôm qua, đây là transcript và thư mục ảnh slide"* · *"Viết lại trọn talk này bằng tiếng Việt"* |
