@@ -5,7 +5,7 @@ metadata:
   category: growth
   scope: bto
   owner: cos-bto
-  version: "0.0.14"
+  version: "0.0.15"
 ---
 
 # /bto-competitor-watch
