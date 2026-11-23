@@ -50,7 +50,7 @@ người khác, không mua tài khoản để trích xuất code.
 
 ## Bước 2 — Phân rã ra core, không tả vỏ
 
-Từ `input/`, cho agent bóc thành các file phân tích:
+Từ `input/`, cho agent bóc thành các file phân tích, đặt cạnh thư mục `input/`. Nguồn không nói thì ghi "không rõ từ nguồn công khai", không đoán:
 
 ```
 features.md        sản phẩm làm được gì, từng tính năng một
@@ -70,7 +70,7 @@ thông báo lỗi).
 Từ các file phân tích, viết `SPEC.md`: mỗi tính năng mô tả người dùng nhận
 được gì, kích hoạt bằng gì, vào gì ra gì, các trạng thái, lỗi thì sao, và
 **cái gì KHÔNG làm**. Đúng khung spec một trang đã học ở Buổi 2, nhân lên
-theo từng tính năng.
+theo từng tính năng. Mỗi tính năng có một dòng `Không làm:`; đếm tính năng thiếu dòng đó, phải bằng 0.
 
 Bài kiểm: mở một phiên agent MỚI, dán SPEC, bảo build thử một tính năng. Nó
 hỏi lại về hành vi (thay vì chỉ hỏi về lựa chọn kỹ thuật) nghĩa là spec chưa
@@ -111,6 +111,23 @@ tình. Đạt thì ship, chưa đạt thì quay lại bước 5.
 Teardown để hiểu vì sao họ thắng, rồi làm khác đi ở khoảng trống. Kết luận
 "làm y hệt nhưng rẻ hơn" nghĩa là chưa xong, quay lại matrix thị trường tìm
 mảnh chưa ai đứng.
+
+## Eval
+
+Ca chạy và kết quả: `evals/bto-teardown.md`, `evals/RESULTS.md` ở gốc repo bto-skills.
+
+| Chỉ số | Cách đo | Đích |
+|---|---|---|
+| Gọi đúng lúc | 5 câu nên gọi + 4 câu nghe giống, đếm câu xử lý đúng | ≥ 8/9 |
+| Chép nguyên văn | chuỗi 12 chữ liên tiếp trùng `input/` trong file phân tích và SPEC; khối code quá 3 dòng | 0 |
+| SPEC đủ ranh giới | tính năng thiếu dòng `Không làm:` | 0 |
+| Tên gốc trong tên mới | tên sản phẩm, tên thư mục chứa tên gốc hay `clone` | 0 |
+
+## Sổ feedback
+
+| Ngày | Chuyện gì xảy ra | Đã sửa gì |
+|---|---|---|
+| 22/11/2026 | Chạy B1 (sản phẩm giả lập, nguồn công khai gom sẵn) bằng agent mới chỉ đọc SKILL.md, 12 chỗ phải đoán. 0 chuỗi chép, 0 dòng code, tên mới sạch, nhưng 4/9 tính năng trong SPEC thiếu phần không làm | Bước 3 bắt mỗi tính năng có dòng `Không làm:`; Bước 2 nói chỗ đặt file và cách ghi khi nguồn không có |
 
 ## Skill này phải tự tốt lên
 

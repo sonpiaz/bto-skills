@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.0.13 · 2026-11-22
+
+- Thêm eval đo được cho `bto-sdlc`, `bto-agent-team`, `bto-secret-guard`, `bto-page-quality`, `bto-teardown`: mỗi skill một file `evals/<skill>.md` (9 câu routing, 3-4 ca behaviour), kết quả ở `evals/RESULTS.md` (routing 45/45, mỗi skill đã chạy một ca behaviour). Mỗi skill có thêm mục Eval, Sổ feedback, Tự cải tiến.
+- `bto-secret-guard`: lệnh quét giờ bắt cả key dạng `sk_live_`/`sk_test_` của Stripe, thêm bước đọc diff bằng mắt và việc phải làm khi quét ra key.
+- `bto-teardown`: mỗi tính năng trong SPEC bắt buộc có dòng "Không làm".
+- Đã cài bằng `setup` thì chạy `git pull` là nhận bản mới.
+
 ## 0.0.12 · 2026-11-22
 
 - `bto-whats-next` giờ kéo được tín hiệu của team về khi bạn hỏi "làm gì tiếp": ticket Linear mới giao hoặc vừa đổi trong cycle, comment tag tên bạn chưa trả lời, ticket sắp hết hạn (khi agent có Linear MCP; chưa có thì skill in một dòng cách nối), PR chờ bạn review, issue giao cho bạn và PR của bạn đang mở trên GitHub, checklist chưa tick trong repo, và việc còn dở từ 1-3 phiên agent trước của chính repo đó (Claude Code, Codex, Cursor). Output có thêm mục đầu "📥 Việc mới từ team". Skill nhớ lần chạy trước bằng một file nhỏ ở `~/.bto-skills/whats-next/`, nằm ngoài repo. Vẫn chỉ đọc: không đổi ticket, không comment.
