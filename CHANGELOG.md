@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.15 · 2026-11-22
+
+- `bto-competitor-watch`: file `.env` chứa token mà quên `chmod 600` (người dùng khác trên máy đọc được) thì script in cảnh báo kèm lệnh sửa, ở cả Terminal và đầu báo cáo. Báo cáo vẫn được viết. Thêm eval B6.
+
 ## 0.0.14 · 2026-11-22
 
 - Thêm `bto-competitor-watch` cho vai Growth: một script Python (chỉ dùng thư viện chuẩn) kéo tin 24 giờ qua về đối thủ và sản phẩm thay thế từ Hacker News (không cần key), Product Hunt (token tuỳ chọn), X (tuỳ chọn, không có token thì báo cáo có link tìm kiếm), ghi `reports/competitors-<ngày>.md` có mục "Video ra mắt đáng học". Skill in lệnh hẹn giờ launchd/cron để bạn tự cài, máy ngủ thì lần sau kéo bù tối đa 72 giờ. Cấu hình và token nằm ở `~/.bto-skills/competitor-watch/`, không bao giờ in ra.

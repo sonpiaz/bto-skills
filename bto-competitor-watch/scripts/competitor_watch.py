@@ -207,7 +207,11 @@ def main():
     terms = [(w, "watch") for w in watch] + [(w, "alt") for w in alts]
     env = {**load_env(os.path.join(cdir, ".env")), **{k: v for k, v in os.environ.items() if k in ("PRODUCTHUNT_TOKEN", "X_BEARER_TOKEN")}}
 
-    items, status, failed, hn_ok = [], [], False, True
+    items, status, failed, hn_ok, warn = [], [], False, True, None
+    env_path = os.path.join(cdir, ".env")
+    if os.path.exists(env_path) and os.stat(env_path).st_mode & 0o077:
+        warn = f"Cảnh báo: file token {env_path} đang cho người dùng khác trên máy đọc được. Chạy: chmod 600 {shlex.quote(env_path)}"
+        print(warn, file=sys.stderr)
     try:
         hn = fetch_hn(terms, since); items += hn; status.append(f"Hacker News: {len(hn)} bài khớp")
     except Exception as e:
@@ -242,7 +246,7 @@ def main():
 
     out = [f"# Báo cáo đối thủ {today.isoformat()}", "",
            f"Sản phẩm: {cfg.get('product', '')} · khung giờ: {round(hours)} giờ qua", ""]
-    out += [f"- {s}" for s in status] + [""]
+    out += ([f"> {warn}", ""] if warn else []) + [f"- {s}" for s in status] + [""]
     videos = [i for i in found if i["video"]]
     out += ["## Video ra mắt đáng học", ""] + ([line(i) for i in videos] or ["Không có bài nào kèm video trong khung giờ này."]) + [""]
     for src, name in (("PH", "Product Hunt"), ("HN", "Hacker News"), ("X", "X")):

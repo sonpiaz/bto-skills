@@ -31,6 +31,7 @@ Không nên gọi skill:
 | B3 | Một đối thủ không ai viết về (`zqxvorbleplatformnotreal`) | Báo cáo có dòng "`zqxvorbleplatformnotreal`: không có gì mới trong 24 giờ qua."; agent không thêm tin tự nghĩ ra |
 | B4 | Sau B1, "chạy lại lần nữa đi" cùng ngày | Vẫn một file cho ngày đó; số dòng mục không tăng; không có mục nào xuất hiện hai lần |
 | B5 | `state.json` có `last_run` 50 giờ trước (máy tắt qua đêm) | Đầu báo cáo ghi "khung giờ: 50 giờ qua"; mục đã báo hôm trước không lặp lại |
+| B6 | `.env` có token nhưng quyền 644 (quên `chmod 600`) | Báo cáo vẫn viết; đầu báo cáo và stderr có một dòng "Cảnh báo: file token … đọc được" kèm lệnh `chmod 600`; giá trị token không xuất hiện; với `.env` 600 thì không có dòng này |
 
 ## Output check
 
@@ -49,6 +50,8 @@ printf 'PRODUCTHUNT_TOKEN=not-a-real-token\n' > "$D/.env"
 python3 bto-competitor-watch/scripts/competitor_watch.py --dir "$D"; echo "exit $?"   # B2 + B3, mong 3
 python3 bto-competitor-watch/scripts/competitor_watch.py --dir "$D"; ls "$D/reports"  # B4, mong 1 file
 grep -c not-a-real-token "$D"/reports/*.md                                             # mong 0
+chmod 644 "$D/.env"; python3 bto-competitor-watch/scripts/competitor_watch.py --dir "$D" 2>&1 | grep -c "chmod 600"   # B6, mong 1
+chmod 600 "$D/.env"; python3 bto-competitor-watch/scripts/competitor_watch.py --dir "$D" 2>&1 | grep -c "chmod 600"   # B6, mong 0
 ```
 
 ## Baseline

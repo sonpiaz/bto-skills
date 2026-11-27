@@ -5,7 +5,7 @@ metadata:
   category: growth
   scope: bto
   owner: cos-bto
-  version: "0.0.14"
+  version: "0.0.15"
 ---
 
 # /bto-competitor-watch
@@ -126,6 +126,7 @@ Ca chạy được và kết quả: [`evals/bto-competitor-watch.md`](../evals/b
 
 | Ngày | Chuyện gì xảy ra | Đã sửa gì |
 |---|---|---|
+| 22/11/2026 | Reviewer lưu ý: người dùng quên `chmod 600` thì token nằm trong file ai trên máy cũng đọc được, script im lặng | Script kiểm quyền `.env`: mở cho người khác thì in cảnh báo kèm lệnh `chmod 600` ở stderr và đầu báo cáo, vẫn chạy tiếp (eval B6) |
 | 22/11/2026 | Hai agent mới chạy B1-B4 chỉ đọc SKILL.md: đạt cả bốn, nêu 8 chỗ phải đoán | Đọc lại tên cho người dùng xác nhận, hỏi có muốn token không, `reports_dir` rỗng, `x_accounts` rỗng, nói rõ nguồn lỗi, bỏ giờ chạy khỏi đầu báo cáo để chạy lại ra đúng file cũ |
 | 22/11/2026 | Tạo skill, chạy thật với Lovable, bolt.new, v0.dev, Replit Agent; thử token Product Hunt giả, đối thủ không có tin, chạy hai lần cùng ngày | v1. Video chỉ hiện một lần (mục video), không lặp ở mục nguồn |
 
